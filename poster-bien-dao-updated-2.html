@@ -1,0 +1,1103 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh Niên Quảng Ninh Với Chủ Quyền Biển Đảo</title>
+<style>
+:root {
+  --red:   #da251d;
+  --gold:  #ffe066;
+  --navy:  #00111f;
+  --blue:  #005080;
+  --teal:  #00c8d7;
+  --jade:  #00b894;
+  --qn:    #0077a8;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Segoe UI',Arial,sans-serif; background:var(--navy); color:#fff; overflow-x:hidden; }
+
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:#000d18; }
+::-webkit-scrollbar-thumb { background:var(--qn); border-radius:3px; }
+
+/* ===== NAV ===== */
+nav {
+  position:fixed; top:0; left:0; width:100%; z-index:1000;
+  background:rgba(0,10,22,0.88); backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,200,215,0.15);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px; height:64px;
+}
+.nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.nav-emblem {
+  width:40px; height:40px; border-radius:50%;
+  background:linear-gradient(135deg,var(--qn),var(--teal));
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; box-shadow:0 0 0 2px rgba(0,200,215,.4);
+}
+.nav-brand { display:flex; flex-direction:column; }
+.nav-brand .n1 { font-size:13px; font-weight:800; color:#fff; letter-spacing:.5px; }
+.nav-brand .n2 { font-size:10px; color:var(--teal); letter-spacing:1px; text-transform:uppercase; }
+.nav-links { display:flex; gap:26px; list-style:none; }
+.nav-links a {
+  color:rgba(255,255,255,.7); font-size:13px; text-decoration:none;
+  font-weight:600; letter-spacing:.5px; transition:color .2s;
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:2px;
+  background:var(--teal); border-radius:2px; transition:width .3s;
+}
+.nav-links a:hover { color:#fff; }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:linear-gradient(90deg,var(--red),#c0392b); color:#fff !important;
+  padding:7px 20px; border-radius:20px; transition:opacity .2s, transform .1s !important;
+}
+.nav-cta:hover { opacity:.88; transform:scale(1.04); }
+.nav-cta::after { display:none !important; }
+
+/* ===== HERO ===== */
+#hero {
+  position:relative; width:100%; height:100vh; min-height:660px;
+  overflow:hidden; display:flex; align-items:center; justify-content:center;
+}
+#oceanCanvas  { position:absolute; inset:0; z-index:0; }
+#starsCanvas  { position:absolute; inset:0; z-index:1; }
+#karst-layer  { position:absolute; inset:0; z-index:2; pointer-events:none; }
+
+.hero-content {
+  position:relative; z-index:10; text-align:center; padding:0 24px;
+  animation:fadeUp .9s ease both;
+}
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)}
+}
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:9px;
+  background:rgba(0,119,168,.25); border:1px solid rgba(0,200,215,.5);
+  border-radius:30px; padding:7px 20px; margin-bottom:22px;
+  font-size:12px; font-weight:700; color:var(--teal); letter-spacing:2px;
+  text-transform:uppercase; animation:fadeUp .9s .1s ease both;
+}
+.pulse-dot { width:8px;height:8px;border-radius:50%;background:var(--teal); animation:pdot 1.4s infinite; }
+@keyframes pdot { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.7);opacity:.4} }
+
+.hero-title {
+  font-size:clamp(34px,5.5vw,76px); font-weight:900; line-height:1.1;
+  text-transform:uppercase; letter-spacing:2px;
+  animation:fadeUp .9s .2s ease both;
+}
+.hero-title .t1 { display:block; color:#cceeff; font-size:.48em; letter-spacing:5px; margin-bottom:4px; }
+.hero-title .t2 {
+  display:block; color:var(--gold);
+  text-shadow:0 0 50px rgba(255,224,102,.4), 0 4px 0 rgba(0,0,0,.35);
+  line-height:1.05;
+}
+.hero-title .t3 { display:block; color:#7dd8f0; font-size:.52em; letter-spacing:4px; margin-top:4px; }
+
+.hero-sub {
+  font-size:15.5px; color:rgba(255,255,255,.68); margin:20px auto 34px;
+  max-width:560px; line-height:1.75; animation:fadeUp .9s .35s ease both;
+}
+.hero-sub span { color:var(--gold); font-weight:700; }
+.hero-sub em   { color:var(--teal); font-style:normal; font-weight:600; }
+
+.hero-buttons {
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  animation:fadeUp .9s .5s ease both;
+}
+.btn {
+  padding:13px 30px; border-radius:30px; font-size:14px; font-weight:700;
+  cursor:pointer; border:none; text-decoration:none;
+  transition:transform .15s, box-shadow .2s;
+  letter-spacing:.5px; display:inline-flex; align-items:center; gap:8px;
+}
+.btn:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.45); }
+.btn-primary { background:linear-gradient(90deg,var(--red),#c0392b); color:#fff; }
+.btn-teal    { background:linear-gradient(90deg,var(--qn),var(--teal)); color:#fff; }
+.btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.38); }
+.btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.07); }
+
+.scroll-hint {
+  position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+  z-index:10; display:flex; flex-direction:column; align-items:center;
+  gap:5px; color:rgba(255,255,255,.4); font-size:11px; letter-spacing:2px;
+  text-transform:uppercase; animation:bounce 2.2s infinite;
+}
+@keyframes bounce {
+  0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)}
+}
+
+/* ===== TICKER ===== */
+#ticker {
+  background:linear-gradient(90deg,#005080,#007090,#005080);
+  padding:13px 0; overflow:hidden;
+}
+.ticker-inner {
+  display:flex; white-space:nowrap; gap:56px;
+  animation:tickMove 32s linear infinite; width:max-content;
+}
+.ticker-inner span {
+  font-size:12.5px; font-weight:700; letter-spacing:1px; color:#fff;
+  display:inline-flex; align-items:center; gap:10px;
+}
+.ticker-inner span::before { content:'⛵'; font-size:13px; }
+@keyframes tickMove { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ===== COMMON ===== */
+section { padding:88px 0; }
+.container { max-width:1100px; margin:0 auto; padding:0 30px; }
+.section-tag {
+  display:inline-block;
+  background:rgba(0,119,168,.2); border:1px solid rgba(0,200,215,.4);
+  color:var(--teal); font-size:11px; font-weight:700; letter-spacing:3px;
+  text-transform:uppercase; border-radius:20px; padding:5px 16px; margin-bottom:14px;
+}
+.section-title { font-size:clamp(26px,4vw,42px); font-weight:900; line-height:1.2; margin-bottom:14px; }
+.section-title span { color:var(--gold); }
+.section-title em   { color:var(--teal); font-style:normal; }
+.section-desc { color:rgba(255,255,255,.58); font-size:15px; line-height:1.8; max-width:600px; }
+.text-center { text-align:center; }
+.text-center .section-desc { margin:0 auto; }
+
+/* ===== STATS ===== */
+#stats { background:linear-gradient(180deg,#001628 0%,#001e30 100%); }
+.stats-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:22px; margin-top:52px;
+}
+.stat-card {
+  background:rgba(255,255,255,.04); border:1px solid rgba(0,200,215,.12);
+  border-radius:20px; padding:34px 20px; text-align:center;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+  cursor:default; position:relative; overflow:hidden;
+}
+.stat-card::before {
+  content:''; position:absolute; inset:0; border-radius:20px;
+  background:radial-gradient(circle at 50% -10%, rgba(0,200,215,.1), transparent 68%);
+  opacity:0; transition:opacity .3s;
+}
+.stat-card:hover { transform:translateY(-8px); box-shadow:0 22px 50px rgba(0,0,0,.45); border-color:var(--teal); }
+.stat-card:hover::before { opacity:1; }
+.stat-icon   { font-size:34px; margin-bottom:12px; }
+.stat-num    { font-size:46px; font-weight:900; color:var(--gold); line-height:1; }
+.stat-unit   { font-size:16px; color:var(--teal); font-weight:700; }
+.stat-label  { font-size:12.5px; color:rgba(255,255,255,.5); margin-top:8px; }
+
+/* ===== MAP ===== */
+#map { background:#000d1c; position:relative; overflow:hidden; }
+.map-wrap {
+  position:relative; margin-top:50px; border-radius:22px; overflow:hidden;
+  background:radial-gradient(ellipse at 40% 50%,#062540 0%,#000d1c 100%);
+  border:1px solid rgba(0,200,215,.12); min-height:480px;
+}
+#mapCanvas { display:block; width:100%; }
+.map-legend {
+  position:absolute; bottom:18px; right:18px;
+  background:rgba(0,8,20,.85); border:1px solid rgba(0,200,215,.2);
+  border-radius:12px; padding:14px 18px; backdrop-filter:blur(8px);
+}
+.map-legend h4 { font-size:11px; font-weight:700; color:var(--gold); letter-spacing:2px; margin-bottom:10px; text-transform:uppercase; }
+.legend-item  { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(255,255,255,.7); margin-bottom:6px; }
+.legend-dot   { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+#islandTooltip {
+  position:absolute; background:rgba(0,12,28,.96); border:1px solid var(--teal);
+  border-radius:12px; padding:14px 18px; min-width:200px;
+  pointer-events:none; opacity:0; transition:opacity .2s;
+  backdrop-filter:blur(8px); z-index:20;
+}
+#islandTooltip h4 { color:var(--gold); font-size:14px; font-weight:700; margin-bottom:6px; }
+#islandTooltip p  { color:rgba(255,255,255,.75); font-size:12px; line-height:1.65; }
+
+/* ===== PLEDGES ===== */
+#pledges { background:linear-gradient(180deg,#001628 0%,#001e30 100%); }
+.pledge-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px; margin-top:50px;
+}
+.pledge-card {
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+  border-radius:18px; padding:28px 22px; position:relative; overflow:hidden;
+  transition:transform .3s, box-shadow .3s; cursor:pointer;
+}
+.pledge-card:hover { transform:translateY(-6px) scale(1.01); box-shadow:0 22px 50px rgba(0,0,0,.5); }
+.pledge-card .accent-line { position:absolute; top:0; left:0; width:100%; height:3px; }
+.pledge-icon  { font-size:30px; margin-bottom:14px; }
+.pledge-title { font-size:16px; font-weight:800; margin-bottom:10px; }
+.pledge-text  { font-size:13.5px; color:rgba(255,255,255,.6); line-height:1.7; }
+.pledge-card .tag {
+  display:inline-block; margin-top:14px; font-size:11px;
+  font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  border-radius:10px; padding:3px 10px;
+}
+
+/* ===== TIMELINE ===== */
+#timeline { background:#000d1c; }
+.timeline-list { margin-top:50px; position:relative; }
+
+/* === DESKTOP >= 701px: zigzag === */
+.timeline-list::before {
+  content:'';
+  position:absolute; left:50%; top:0; bottom:0;
+  width:2px; transform:translateX(-50%);
+  background:linear-gradient(180deg,var(--red),var(--teal));
+}
+.tl-item {
+  display:grid;
+  grid-template-columns:1fr 60px 1fr;
+  align-items:center;
+  margin-bottom:48px;
+}
+.tl-dot-wrap { display:flex; justify-content:center; align-items:center; }
+.tl-dot {
+  width:44px; height:44px; border-radius:50%;
+  background:linear-gradient(135deg,var(--qn),var(--teal));
+  border:3px solid #000d1c;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0; box-shadow:0 0 0 3px var(--qn);
+}
+.tl-content {
+  background:rgba(255,255,255,.04); border:1px solid rgba(0,200,215,.1);
+  border-radius:16px; padding:22px 24px;
+  transition:transform .3s, box-shadow .3s;
+}
+.tl-content:hover { transform:scale(1.02); box-shadow:0 12px 30px rgba(0,0,0,.4); }
+.tl-left  { text-align:right; padding-right:28px; }
+.tl-right  { text-align:left;  padding-left:28px; }
+.tl-empty  { visibility:hidden; }
+/* tl-mirror: bản sao nội dung cho mobile, ẩn trên desktop */
+.tl-mirror { display:none; }
+.tl-year  { color:var(--gold); font-size:12px; font-weight:800; margin-bottom:6px; letter-spacing:1px; }
+.tl-title { font-size:16px; font-weight:700; margin-bottom:8px; }
+.tl-desc  { font-size:13px; color:rgba(255,255,255,.6); line-height:1.65; }
+
+/* === MOBILE <= 700px: 1 cột dọc === */
+@media(max-width:700px){
+  nav { padding:0 16px; }
+  .nav-links { display:none; }
+
+  /* Đường dọc sát trái */
+  .timeline-list::before { left:20px; transform:none; }
+
+  /* Reset grid, chuyển sang flex 1 hàng */
+  .tl-item {
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:flex-start !important;
+    margin-bottom:28px !important;
+    gap:0 !important;
+  }
+
+  /* Ẩn ô trống */
+  .tl-empty { display:none !important; }
+
+  /* Ẩn content bên trái trên desktop (tl-left) */
+  .tl-content.tl-left { display:none !important; }
+
+  /* Hiện bản sao mobile (tl-mirror) thay thế tl-left */
+  .tl-content.tl-mirror {
+    display:block !important;
+    flex:1 !important;
+    min-width:0 !important;
+    text-align:left !important;
+    padding:14px 16px !important;
+    margin:0 !important;
+    order:2;
+  }
+
+  /* Dot: cố định bên trái */
+  .tl-dot-wrap {
+    flex-shrink:0 !important;
+    width:40px !important;
+    padding-top:4px !important;
+    justify-content:center !important;
+    order:1;
+  }
+  .tl-dot {
+    width:38px !important;
+    height:38px !important;
+    font-size:15px !important;
+  }
+
+  /* Content bên phải (tl-right): hiển thị đầy đủ, căn trái */
+  .tl-content.tl-right {
+    display:block !important;
+    flex:1 !important;
+    min-width:0 !important;
+    text-align:left !important;
+    padding:14px 16px !important;
+    margin:0 !important;
+    order:2;
+  }
+}
+
+/* ===== QUIZ ===== */
+#quiz { background:linear-gradient(180deg,#001628 0%,#001e30 100%); }
+.quiz-box {
+  background:rgba(255,255,255,.04); border:1px solid rgba(0,200,215,.15);
+  border-radius:24px; padding:40px; max-width:740px; margin:50px auto 0;
+  position:relative; overflow:hidden;
+}
+.quiz-box::before {
+  content:''; position:absolute; top:-60px; right:-60px;
+  width:200px; height:200px; border-radius:50%;
+  background:radial-gradient(circle,rgba(0,200,215,.1),transparent 70%);
+}
+.quiz-progress-bar {
+  height:4px; background:rgba(255,255,255,.1); border-radius:2px; margin-bottom:28px; overflow:hidden;
+}
+.quiz-progress-fill {
+  height:100%; background:linear-gradient(90deg,var(--red),var(--teal));
+  border-radius:2px; transition:width .5s ease;
+}
+.quiz-q-num   { font-size:11px; color:rgba(255,255,255,.4); letter-spacing:2px; margin-bottom:10px; text-transform:uppercase; }
+.quiz-question{ font-size:20px; font-weight:700; line-height:1.5; margin-bottom:26px; }
+.quiz-options { display:flex; flex-direction:column; gap:11px; }
+.quiz-option {
+  background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.12);
+  border-radius:12px; padding:14px 20px; cursor:pointer; font-size:14px;
+  transition:background .2s, border-color .2s, transform .1s;
+  display:flex; align-items:center; gap:12px; font-weight:500;
+}
+.quiz-option:hover:not(.disabled) { background:rgba(0,200,215,.14); border-color:var(--teal); transform:translateX(4px); }
+.quiz-option.correct { background:rgba(0,184,148,.2); border-color:var(--jade); color:#a8e6cf; }
+.quiz-option.wrong   { background:rgba(218,37,29,.2);  border-color:var(--red);  color:#ff8a80; }
+.quiz-option.disabled{ cursor:not-allowed; pointer-events:none; }
+.quiz-option-letter {
+  width:28px; height:28px; border-radius:50%; border:1.5px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-weight:700; flex-shrink:0;
+}
+.quiz-explain {
+  margin-top:16px; padding:14px 18px;
+  background:rgba(0,200,215,.09); border-left:3px solid var(--teal);
+  border-radius:0 10px 10px 0; font-size:13.5px;
+  color:rgba(255,255,255,.8); line-height:1.7; display:none;
+}
+.quiz-nav { display:flex; justify-content:space-between; align-items:center; margin-top:22px; }
+.quiz-score{ font-size:13px; color:rgba(255,255,255,.4); }
+#quiz-result { text-align:center; padding:20px 0; display:none; }
+#quiz-result .result-icon { font-size:64px; margin-bottom:16px; }
+#quiz-result h3  { font-size:26px; font-weight:800; color:var(--gold); margin-bottom:10px; }
+#quiz-result p   { color:rgba(255,255,255,.65); font-size:15px; line-height:1.7; }
+#quiz-result .score-big { font-size:56px; font-weight:900; color:var(--gold); display:block; margin:10px 0; }
+
+/* ===== WALL ===== */
+#wall { background:#000d1c; }
+.wall-input-wrap {
+  background:rgba(255,255,255,.04); border:1px solid rgba(0,200,215,.15);
+  border-radius:20px; padding:30px; max-width:640px; margin:0 auto 40px;
+}
+.wall-input-wrap input, .wall-input-wrap textarea {
+  width:100%; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14);
+  border-radius:10px; padding:13px 16px; color:#fff; font-size:14px;
+  margin-bottom:12px; resize:none; outline:none; font-family:inherit;
+  transition:border-color .2s;
+}
+.wall-input-wrap input:focus,
+.wall-input-wrap textarea:focus { border-color:var(--teal); }
+.wall-input-wrap input::placeholder,
+.wall-input-wrap textarea::placeholder { color:rgba(255,255,255,.3); }
+.wall-submit {
+  background:linear-gradient(90deg,var(--qn),var(--teal)); color:#fff;
+  border:none; border-radius:10px; padding:12px 28px; font-size:14px;
+  font-weight:700; cursor:pointer; letter-spacing:.5px; transition:opacity .2s, transform .1s;
+}
+.wall-submit:hover { opacity:.88; transform:scale(1.03); }
+.wall-submit:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+.pledge-wall {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px;
+}
+.wall-card {
+  background:rgba(255,255,255,.05); border:1px solid rgba(0,200,215,.1);
+  border-radius:14px; padding:20px; position:relative; overflow:hidden;
+  animation:cardIn .4s ease both;
+}
+@keyframes cardIn {
+  from{opacity:0;transform:scale(.9) translateY(10px)}
+  to  {opacity:1;transform:scale(1) translateY(0)}
+}
+.wall-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--qn),var(--teal));
+}
+.wall-card .wc-name { font-size:13px; font-weight:700; color:var(--gold); margin-bottom:6px; }
+.wall-card .wc-text { font-size:13px; color:rgba(255,255,255,.72); line-height:1.6; font-style:italic; }
+.wall-card .wc-time { font-size:11px; color:rgba(255,255,255,.28); margin-top:10px; }
+.wall-loading {
+  text-align:center; padding:40px; color:rgba(255,255,255,.4);
+  font-size:14px; grid-column:1/-1;
+}
+.wall-loading .spinner {
+  width:32px; height:32px; border:3px solid rgba(0,200,215,.2);
+  border-top-color:var(--teal); border-radius:50%;
+  animation:spin .8s linear infinite; margin:0 auto 12px;
+}
+@keyframes spin { to{transform:rotate(360deg)} }
+.wall-error {
+  text-align:center; padding:24px; color:#ff8a80; font-size:13px;
+  background:rgba(218,37,29,.1); border:1px solid rgba(218,37,29,.3);
+  border-radius:12px; grid-column:1/-1;
+}
+.firebase-status {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:11px; color:rgba(255,255,255,.4); margin-top:10px;
+}
+.firebase-status .fb-dot {
+  width:7px; height:7px; border-radius:50%; background:#ccc;
+}
+.firebase-status .fb-dot.connected { background:#4caf50; box-shadow:0 0 6px #4caf50; }
+.firebase-status .fb-dot.error     { background:var(--red); }
+
+/* ===== CTA ===== */
+#cta {
+  background:linear-gradient(135deg,#003a5c 0%,var(--qn) 50%,#005c80 100%);
+  position:relative; overflow:hidden;
+}
+#cta::before {
+  content:''; position:absolute; inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+#cta .container { position:relative; text-align:center; }
+#cta h2 { font-size:clamp(26px,5vw,50px); font-weight:900; text-transform:uppercase; margin-bottom:14px; }
+#cta p  { font-size:16px; opacity:.85; margin-bottom:32px; line-height:1.7; }
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-white{ background:#fff; color:var(--qn); }
+.btn-white:hover{ background:#d0f0ff; }
+.btn-ghost{ background:transparent; color:#fff; border:2px solid rgba(255,255,255,.55); }
+.btn-ghost:hover{ background:rgba(255,255,255,.1); border-color:#fff; }
+
+/* ===== FOOTER ===== */
+footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215,.1); }
+.footer-inner {
+  max-width:1100px; margin:0 auto; padding:0 30px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+}
+.footer-left { font-size:13px; color:rgba(255,255,255,.32); line-height:1.8; }
+.footer-left strong { color:var(--gold); }
+.footer-right { display:flex; gap:8px; }
+.social-btn {
+  width:36px; height:36px; border-radius:50%;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; cursor:pointer; transition:background .2s, transform .1s;
+  text-decoration:none; color:#fff;
+}
+.social-btn:hover { background:var(--qn); transform:scale(1.12); }
+
+/* ===== REVEAL ===== */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ===== PARTICLES ===== */
+#particles { position:fixed; inset:0; pointer-events:none; z-index:0; }
+
+/* ===== BTT ===== */
+#btt {
+  position:fixed; bottom:28px; right:28px; z-index:900;
+  width:44px; height:44px; border-radius:50%;
+  background:var(--qn); border:none; color:#fff;
+  font-size:18px; cursor:pointer; display:none;
+  align-items:center; justify-content:center;
+  box-shadow:0 4px 16px rgba(0,119,168,.55);
+  transition:transform .2s;
+}
+#btt:hover { transform:scale(1.12) translateY(-2px); }
+#btt.show  { display:flex; }
+
+
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <div class="nav-emblem">⛵</div>
+    <div class="nav-brand">
+      <span class="n1">Thanh Niên Quảng Ninh</span>
+      <span class="n2">Chủ Quyền Biển Đảo</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#stats">Quảng Ninh</a></li>
+    <li><a href="#map">Bản đồ</a></li>
+    <li><a href="#pledges">Hành động</a></li>
+    <li><a href="#timeline">Lịch sử</a></li>
+    <li><a href="#quiz">Kiểm tra</a></li>
+    <li><a href="#wall" class="nav-cta">Tôi cam kết ✊</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="oceanCanvas"></canvas>
+  <canvas id="starsCanvas"></canvas>
+  <canvas id="karst-layer"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="pulse-dot"></div>Tỉnh Quảng Ninh — Vùng Biển Thiêng Liêng</div>
+    <h1 class="hero-title">
+      <span class="t1">Thanh Niên Quảng Ninh Với</span>
+      <span class="t2">Chủ Quyền<br>Biển Đảo</span>
+      <span class="t3">Bảo Vệ – Gìn Giữ – Phát Triển</span>
+    </h1>
+    <p class="hero-sub">
+      Từ <span>Vịnh Hạ Long</span> huyền thoại đến <em>Vịnh Bái Tử Long</em> hùng vĩ —<br>
+      Thanh niên Quảng Ninh tiên phong giữ gìn chủ quyền biển đảo thiêng liêng của Tổ quốc.
+    </p>
+    <div class="hero-buttons">
+      <a href="#pledges" class="btn btn-primary">✊ Tham gia ngay</a>
+      <a href="#map"   class="btn btn-teal">🗺️ Khám phá bản đồ</a>
+      <a href="#quiz"  class="btn btn-outline">📖 Kiểm tra kiến thức</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Cuộn xuống
+  </div>
+</section>
+
+<!-- TICKER -->
+<div id="ticker"><div class="ticker-inner" id="tickerInner"></div></div>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Quảng Ninh — Con số biết nói</div>
+      <h2 class="section-title">Vùng Biển <span>Quảng Ninh</span> — Tự Hào <em>Đất Mỏ</em></h2>
+      <p class="section-desc">Quảng Ninh sở hữu vùng biển rộng lớn, giàu tài nguyên và mang tầm quan trọng chiến lược đặc biệt với quốc gia</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="stat-icon">🌊</div><div class="stat-num"><span class="count" data-target="250">0</span></div><div class="stat-unit">km</div><div class="stat-label">Chiều dài bờ biển Quảng Ninh</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🏝️</div><div class="stat-num"><span class="count" data-target="2077">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo lớn nhỏ trong tỉnh</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🦅</div><div class="stat-num"><span class="count" data-target="1553">0</span></div><div class="stat-unit">km²</div><div class="stat-label">Diện tích Vịnh Hạ Long</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🌿</div><div class="stat-num"><span class="count" data-target="775">0</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo trong Vịnh Hạ Long</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🏆</div><div class="stat-num"><span class="count" data-target="2">0</span></div><div class="stat-unit">lần</div><div class="stat-label">UNESCO công nhận Di sản Thế giới</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">⚓</div><div class="stat-num"><span class="count" data-target="40">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">năm</div><div class="stat-label">Thanh niên QN bám biển giữ đảo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Bản đồ tương tác</div>
+      <h2 class="section-title">Vùng Biển <span>Quảng Ninh</span> — Nhìn Từ Trên Cao</h2>
+      <p class="section-desc">Khám phá Vịnh Hạ Long, Vịnh Bái Tử Long, đảo Cô Tô và các địa danh biển đảo nổi bật của Quảng Ninh trực tiếp trên Google Maps</p>
+    </div>
+    <div class="map-wrap reveal" style="min-height:auto; border-radius:18px; overflow:hidden; border:2px solid rgba(0,200,215,0.25); box-shadow:0 0 40px rgba(0,200,215,0.1);">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1902409.852332679!2d106.63435882645607!3d21.166544760592984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f3!3m3!1m2!1s0x314a5796518a287b%3A0x94828b438258e80d!2sQu%E1%BA%A3ng+Ninh%2C+Vietnam!5e0!3m2!1sen!2s!4v1716212000000!5m2!1sen!2s"
+        width="100%"
+        height="480"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Bản đồ Quảng Ninh">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PLEDGES -->
+<section id="pledges">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Thanh Niên Hành Động</div>
+      <h2 class="section-title">6 Cam Kết Của <span>Thanh Niên Quảng Ninh</span></h2>
+      <p class="section-desc">Sinh ra và lớn lên bên những vịnh biển huyền thoại, thanh niên Quảng Ninh mang trên vai trách nhiệm đặc biệt với biển đảo Tổ quốc</p>
+    </div>
+    <div class="pledge-grid" id="pledgeGrid"></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Lịch sử Quảng Ninh</div>
+      <h2 class="section-title">Hành Trình <span>Giữ Biển</span> Của Quảng Ninh</h2>
+      <p class="section-desc">Những cột mốc lịch sử gắn liền với vùng đất và vùng biển Quảng Ninh — từ quá khứ hào hùng đến hiện tại tự hào</p>
+    </div>
+    <div class="timeline-list" id="timelineList"></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Trắc nghiệm</div>
+      <h2 class="section-title">Bạn Hiểu Bao Nhiêu Về <span>Biển Đảo Quảng Ninh?</span></h2>
+      <p class="section-desc">Hãy thử thách bản thân với 7 câu hỏi về vùng biển đảo Quảng Ninh và chủ quyền biển quốc gia!</p>
+    </div>
+    <div class="quiz-box reveal">
+      <div id="quiz-main">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill"></div></div>
+        <div class="quiz-q-num" id="quizNum"></div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options"  id="quizOptions"></div>
+        <div class="quiz-explain"  id="quizExplain"></div>
+        <div class="quiz-nav">
+          <div class="quiz-score" id="quizScore">Điểm: 0</div>
+          <button class="btn btn-teal" id="quizNextBtn" style="display:none">Tiếp theo →</button>
+        </div>
+      </div>
+      <div id="quiz-result">
+        <div class="result-icon" id="resultIcon"></div>
+        <h3 id="resultTitle"></h3>
+        <span class="score-big" id="resultScore"></span>
+        <p id="resultMsg"></p>
+        <br>
+        <button class="btn btn-teal" onclick="restartQuiz()" style="margin-top:16px">🔄 Làm lại</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WALL -->
+<section id="wall">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">Bức Tường Cam Kết</div>
+      <h2 class="section-title">Lời Thề Của <span>Thanh Niên Quảng Ninh</span></h2>
+      <p class="section-desc">Hãy để lại lời cam kết của bạn — mỗi lời thề là một viên đá vững chắc bảo vệ biển đảo quê hương</p>
+    </div>
+    <div class="wall-input-wrap reveal">
+      <input type="text" id="wallName" placeholder="Tên của bạn (vd: Nguyễn Văn A, Hạ Long / Móng Cái / Cẩm Phả...)" maxlength="70">
+      <textarea id="wallText" rows="3" placeholder="Viết lời cam kết của bạn với biển đảo Quảng Ninh và Tổ quốc..." maxlength="220"></textarea>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+        <button class="wall-submit" id="wallSubmitBtn" onclick="addPledge()">⛵ Gửi lời cam kết</button>
+        <div class="firebase-status" id="fbStatus">
+          <div class="fb-dot" id="fbDot"></div>
+          <span id="fbStatusText">Đang kết nối Firebase...</span>
+        </div>
+      </div>
+    </div>
+    <div class="pledge-wall" id="pledgeWall">
+      <div class="wall-loading">
+        <div class="spinner"></div>
+        Đang tải lời cam kết...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <h2>Quảng Ninh — Vùng Biển Thiêng Liêng<br>Mãi Thuộc Về Tổ Quốc Việt Nam!</h2>
+    <p>Từ Vịnh Hạ Long đến Bái Tử Long, từ Cô Tô đến Vĩnh Thực —<br>Thanh niên Quảng Ninh sẵn sàng cống hiến, bảo vệ từng tấc biển quê hương.</p>
+    <div class="cta-buttons">
+      <a href="#wall" class="btn btn-white">✊ Để lại lời cam kết</a>
+      <a href="#quiz" class="btn btn-ghost">📚 Kiểm tra hiểu biết</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>Thanh Niên Quảng Ninh Với Chủ Quyền Biển Đảo</strong><br>
+      🇻🇳 Vịnh Hạ Long – Bái Tử Long – Cô Tô · Giữ vững biển đảo quê hương
+    </div>
+    <div class="footer-right">
+      <a class="social-btn" title="Chia sẻ">📢</a>
+      <a class="social-btn" title="Facebook">f</a>
+      <a class="social-btn" title="Lên đầu" href="#hero">↑</a>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ============================================================
+     FIREBASE SDK (v9 compat)
+     THAY THẾ CÁC GIÁ TRỊ DƯỚI ĐÂY BẰNG CONFIG CỦA BẠN
+     ============================================================ -->
+<script>
+// Firebase được load bất đồng bộ, không block trang
+(function() {
+  function loadScript(src, cb) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.onload = cb;
+    s.onerror = function() { console.warn('Firebase CDN unavailable (offline/sandbox)'); cb(); };
+    document.head.appendChild(s);
+  }
+  loadScript('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js', function() {
+    loadScript('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js', function() {
+      window._firebaseLoaded = true;
+      if (window._initFirebase) window._initFirebase();
+    });
+  });
+})();
+</script>
+
+<script>
+/* ============================================================
+   🔥 FIREBASE CONFIG — ĐIỀN THÔNG TIN DỰ ÁN CỦA BẠN VÀO ĐÂY
+   ============================================================ */
+const firebaseConfig = {
+  apiKey: "AIzaSyBUZ5twbdLQzeN2IvQ9SUoeQwQfFUo-MwU",
+  authDomain: "posterthanhnienqn.firebaseapp.com",
+  projectId: "posterthanhnienqn",
+  storageBucket: "posterthanhnienqn.firebasestorage.app",
+  messagingSenderId: "150328516793",
+  appId: "1:150328516793:web:2184c0b5b05f7064f87b68",
+  measurementId: "G-P92TNWMBMF"
+};
+
+/* ============================================================
+   KHỞI TẠO FIREBASE
+   ============================================================ */
+let db = null;
+let firebaseReady = false;
+
+window._initFirebase = function() {
+  try {
+    if (typeof firebase === 'undefined') { throw new Error('Firebase not loaded'); }
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.firestore();
+    firebaseReady = true;
+    initWallListener();
+  } catch(e) {
+    console.warn('Firebase init error:', e);
+    setFbStatus('error', 'Không có kết nối Firebase');
+    document.getElementById('pledgeWall').innerHTML =
+      '<div class="wall-error">⚠️ Firebase chưa được cấu hình. Xem README-firebase.md</div>';
+  }
+};
+if (window._firebaseLoaded) window._initFirebase();
+
+/* ============================================================
+   FIREBASE STATUS UI
+   ============================================================ */
+function setFbStatus(state, text) {
+  const dot  = document.getElementById('fbDot');
+  const span = document.getElementById('fbStatusText');
+  dot.className  = 'fb-dot' + (state ? ' ' + state : '');
+  span.textContent = text;
+}
+
+/* ============================================================
+   DATA
+   ============================================================ */
+const tickerItems = [
+  'Vịnh Hạ Long — Di sản Thiên nhiên Thế giới UNESCO',
+  'Quảng Ninh có hơn 2.077 hòn đảo lớn nhỏ',
+  'Bờ biển Quảng Ninh dài 250 km',
+  'Thanh niên Quảng Ninh — Tiên phong giữ biển',
+  'Cô Tô — Đảo tiền tiêu phía Đông Bắc Tổ quốc',
+  'Bái Tử Long — Vịnh biển hùng vĩ chưa khai phá',
+  'Móng Cái — Cửa ngõ biên giới biển Đông Bắc',
+  'Vịnh Hạ Long rộng 1.553 km² với 775 hòn đảo',
+  'Đất Mỏ — Vùng biển giàu tài nguyên chiến lược',
+];
+
+const pledgesData = [
+  { icon:'📚', color:'#0077a8', title:'Học & Hiểu', text:'Tích cực tìm hiểu lịch sử, địa lý, pháp lý về biển đảo Quảng Ninh và chủ quyền biển Việt Nam.', tag:'Tri thức', tagColor:'rgba(0,119,168,.22)', tagTextColor:'#7dd8f0' },
+  { icon:'🛡️', color:'#da251d', title:'Bảo Vệ Chủ Quyền', text:'Sẵn sàng tham gia dân quân biển, hỗ trợ lực lượng biên phòng bảo vệ vùng biển Đông Bắc Tổ quốc.', tag:'Dũng cảm', tagColor:'rgba(218,37,29,.2)', tagTextColor:'#ff9999' },
+  { icon:'🌿', color:'#00b894', title:'Bảo Vệ Môi Trường Biển', text:'Tham gia thu gom rác biển, bảo vệ hệ sinh thái san hô và đa dạng sinh học Vịnh Hạ Long, Bái Tử Long.', tag:'Xanh sạch', tagColor:'rgba(0,184,148,.2)', tagTextColor:'#a8e6cf' },
+  { icon:'📢', color:'#f39c12', title:'Lan Tỏa & Truyền Thông', text:'Quảng bá hình ảnh biển đảo Quảng Ninh, nâng cao nhận thức cộng đồng về chủ quyền quốc gia.', tag:'Cộng đồng', tagColor:'rgba(243,156,18,.2)', tagTextColor:'#ffd580' },
+  { icon:'⚓', color:'#8e44ad', title:'Hỗ Trợ Ngư Dân', text:'Đồng hành cùng ngư dân Quảng Ninh bám biển, hỗ trợ kinh tế hải sản và làng chài truyền thống.', tag:'Đoàn kết', tagColor:'rgba(142,68,173,.2)', tagTextColor:'#d7b8f3' },
+  { icon:'🏆', color:'#16a085', title:'Phát Triển Kinh Tế Biển', text:'Xây dựng Quảng Ninh thành trung tâm kinh tế biển xanh, du lịch bền vững gắn với bảo vệ chủ quyền.', tag:'Phát triển', tagColor:'rgba(22,160,133,.2)', tagTextColor:'#76d7c4' },
+];
+
+const timelineData = [
+  { year:'Thế kỷ XIII', icon:'⚔️', title:'Chiến thắng Bạch Đằng 1288', desc:'Hưng Đạo Vương Trần Quốc Tuấn đại phá quân Nguyên Mông trên sông Bạch Đằng (Quảng Ninh), khẳng định chủ quyền lãnh thổ và sức mạnh bảo vệ biển của dân tộc.' },
+  { year:'1962', icon:'🏛️', title:'Vịnh Hạ Long được xếp hạng di tích', desc:'Bộ Văn hóa xếp hạng Vịnh Hạ Long là di tích danh thắng cấp quốc gia, bước đầu khẳng định giá trị đặc biệt của vùng biển Quảng Ninh.' },
+  { year:'1994', icon:'🌍', title:'UNESCO công nhận lần đầu', desc:'Vịnh Hạ Long lần đầu tiên được UNESCO công nhận là Di sản Thiên nhiên Thế giới về giá trị thẩm mỹ — niềm tự hào của Quảng Ninh và cả dân tộc.' },
+  { year:'2000', icon:'🔬', title:'UNESCO công nhận lần thứ hai', desc:'Vịnh Hạ Long tiếp tục được UNESCO vinh danh lần thứ hai về giá trị địa chất địa mạo, khẳng định tầm quan trọng toàn cầu của vùng biển đảo Quảng Ninh.' },
+  { year:'2013', icon:'🗺️', title:'Quy hoạch phát triển kinh tế biển', desc:'Quảng Ninh ban hành quy hoạch tổng thể phát triển kinh tế biển gắn với bảo vệ chủ quyền, đặt mục tiêu thành trung tâm du lịch biển quốc tế.' },
+  { year:'2020', icon:'💧', title:'Khu bảo tồn biển Cô Tô – Đảo Trần', desc:'Khu bảo tồn biển Cô Tô – Đảo Trần được thành lập, bảo vệ hệ sinh thái và khẳng định chủ quyền trên vùng biển Đông Bắc xa xôi của Quảng Ninh.' },
+  { year:'Hôm nay', icon:'✊', title:'Thanh niên Quảng Ninh tiếp lửa', desc:'Thế hệ trẻ Quảng Ninh kế thừa truyền thống cha ông, vừa phát triển kinh tế biển bền vững vừa kiên cường bảo vệ chủ quyền vùng biển Đông Bắc Tổ quốc.' },
+];
+
+const quizData = [
+  { q:'Vịnh Hạ Long được UNESCO công nhận là Di sản Thiên nhiên Thế giới lần đầu vào năm nào?', opts:['1990','1994','1998','2000'], ans:1, explain:'Vịnh Hạ Long được UNESCO công nhận lần đầu vào năm 1994 về giá trị thẩm mỹ, và lần thứ hai năm 2000 về giá trị địa chất địa mạo.' },
+  { q:'Quảng Ninh có bao nhiêu hòn đảo lớn nhỏ?', opts:['Hơn 500','Hơn 1.000','Hơn 2.000','Hơn 3.000'], ans:2, explain:'Quảng Ninh có hơn 2.077 hòn đảo lớn nhỏ, chiếm 2/3 tổng số đảo của cả nước.' },
+  { q:'Trận chiến thắng lịch sử nào trên sông Bạch Đằng (Quảng Ninh) đánh bại quân Nguyên Mông?', opts:['Năm 1258','Năm 1285','Năm 1288','Năm 1300'], ans:2, explain:'Trận Bạch Đằng năm 1288 do Hưng Đạo Vương Trần Quốc Tuấn chỉ huy đã đánh bại hoàn toàn quân Nguyên Mông.' },
+  { q:'Đảo Cô Tô thuộc huyện nào của tỉnh Quảng Ninh?', opts:['Huyện Vân Đồn','Huyện Cô Tô','Huyện Tiên Yên','Huyện Đầm Hà'], ans:1, explain:'Cô Tô là huyện đảo tiền tiêu của tỉnh Quảng Ninh, nằm ở phía Đông Bắc, cách đất liền khoảng 60-100km.' },
+  { q:'Vịnh Bái Tử Long nằm ở đâu so với Vịnh Hạ Long?', opts:['Phía Tây','Phía Nam','Phía Đông Bắc','Phía Tây Nam'], ans:2, explain:'Vịnh Bái Tử Long nằm ở phía Đông Bắc của Vịnh Hạ Long, thuộc huyện Vân Đồn.' },
+  { q:'Chiều dài bờ biển của tỉnh Quảng Ninh là bao nhiêu?', opts:['Khoảng 100 km','Khoảng 150 km','Khoảng 200 km','Khoảng 250 km'], ans:3, explain:'Tỉnh Quảng Ninh có đường bờ biển dài khoảng 250 km, kéo dài từ Trà Cổ (Móng Cái) đến Đông Triều.' },
+  { q:'Khu vực nào của Quảng Ninh được mệnh danh là "nơi con rồng hạ xuống"?', opts:['Vịnh Bái Tử Long','Vịnh Hạ Long','Đảo Cô Tô','Hòn Gai'], ans:1, explain:'"Hạ Long" trong tiếng Việt có nghĩa là "rồng hạ xuống". Theo truyền thuyết, một đàn rồng đã hạ xuống vùng biển này và nhả ra những hòn đá ngọc.' },
+];
+
+
+
+/* ============================================================
+   PARTICLES
+   ============================================================ */
+(function(){
+  const c=document.getElementById('particles'),ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function resize(){ W=c.width=window.innerWidth; H=c.height=window.innerHeight; }
+  resize(); window.addEventListener('resize',resize);
+  for(let i=0;i<60;i++) pts.push({x:Math.random()*1920,y:Math.random()*1080,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*1.4+.4,o:Math.random()*.35+.08,hue:Math.random()<.5?'180,200,220':'255,255,255'});
+  function draw(){ ctx.clearRect(0,0,W,H); pts.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; if(p.x<0)p.x=W; if(p.x>W)p.x=0; if(p.y<0)p.y=H; if(p.y>H)p.y=0; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(${p.hue},${p.o})`; ctx.fill(); }); requestAnimationFrame(draw); }
+  draw();
+})();
+
+/* ============================================================
+   STARS
+   ============================================================ */
+(function(){
+  const c=document.getElementById('starsCanvas'),ctx=c.getContext('2d');
+  let stars=[];
+  function resize(){ c.width=c.parentElement.offsetWidth; c.height=c.parentElement.offsetHeight; }
+  resize(); window.addEventListener('resize',resize);
+  for(let i=0;i<100;i++) stars.push({x:Math.random(),y:Math.random()*.45,r:Math.random()*1.6+.3,phase:Math.random()*Math.PI*2,speed:Math.random()*.018+.007});
+  function draw(){ ctx.clearRect(0,0,c.width,c.height); stars.forEach(s=>{ s.phase+=s.speed; const o=.25+.75*Math.abs(Math.sin(s.phase)); ctx.beginPath(); ctx.arc(s.x*c.width,s.y*c.height,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(255,255,255,${o})`; ctx.fill(); }); requestAnimationFrame(draw); }
+  draw();
+})();
+
+/* ============================================================
+   KARST
+   ============================================================ */
+(function(){
+  const c=document.getElementById('karst-layer'),ctx=c.getContext('2d');
+  function resize(){ c.width=c.parentElement.offsetWidth; c.height=c.parentElement.offsetHeight; }
+  resize(); window.addEventListener('resize',resize);
+  const kd=[[.02,.92,.58,.07],[.08,.94,.52,.09],[.16,.95,.60,.06],[.23,.93,.55,.08],[.30,.95,.62,.05],[.36,.94,.50,.10],[.44,.96,.65,.07],[.50,.93,.55,.06],[.56,.95,.58,.09],[.63,.94,.52,.07],[.70,.96,.60,.06],[.76,.93,.48,.10],[.83,.95,.57,.08],[.89,.94,.63,.06],[.95,.96,.54,.07]];
+  function loop(){
+    ctx.clearRect(0,0,c.width,c.height); const W=c.width,H=c.height;
+    kd.forEach(([xf,bf,pf,wf],i)=>{ if(i%2!==0)return; const x=xf*W,base=bf*H,peak=pf*H,w=wf*W; const g=ctx.createLinearGradient(x,peak,x,base); g.addColorStop(0,'rgba(0,60,100,0.35)'); g.addColorStop(1,'rgba(0,40,70,0.55)'); ctx.beginPath(); ctx.moveTo(x-w*.5,base); ctx.bezierCurveTo(x-w*.5,base-H*.05,x-w*.2,peak+H*.03,x,peak); ctx.bezierCurveTo(x+w*.2,peak+H*.03,x+w*.5,base-H*.05,x+w*.5,base); ctx.closePath(); ctx.fillStyle=g; ctx.fill(); });
+    kd.forEach(([xf,bf,pf,wf],i)=>{ if(i%2===0)return; const x=xf*W,base=Math.min(bf*H+H*.04,H),peak=pf*H+H*.06,w=wf*W*1.3; const g=ctx.createLinearGradient(x,peak,x,base); g.addColorStop(0,'rgba(0,40,70,0.65)'); g.addColorStop(.5,'rgba(0,25,50,0.80)'); g.addColorStop(1,'rgba(0,15,30,0.90)'); ctx.beginPath(); ctx.moveTo(x-w*.5,base); ctx.bezierCurveTo(x-w*.4,base-H*.06,x-w*.15,peak+H*.05,x,peak); ctx.bezierCurveTo(x+w*.15,peak+H*.05,x+w*.4,base-H*.06,x+w*.5,base); ctx.closePath(); ctx.fillStyle=g; ctx.fill(); });
+    const wt=Date.now()/1000;
+    for(let xi=0;xi<W;xi+=6){ const ry=H*.78+Math.sin(xi*.05+wt*2)*4+Math.sin(xi*.02+wt)*3; ctx.fillStyle=`rgba(0,180,220,${.04+.03*Math.sin(xi*.03+wt)})`; ctx.fillRect(xi,ry,4,2); }
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ============================================================
+   OCEAN
+   ============================================================ */
+(function(){
+  const c=document.getElementById('oceanCanvas'),ctx=c.getContext('2d');
+  let t=0;
+  function resize(){ c.width=c.parentElement.offsetWidth; c.height=c.parentElement.offsetHeight; }
+  resize(); window.addEventListener('resize',resize);
+  function wave(y,amp,freq,phase,r,g,b,a){ ctx.beginPath(); ctx.moveTo(0,c.height); for(let x=0;x<=c.width;x+=4){ ctx.lineTo(x,y+Math.sin(x*freq+phase)*amp+Math.sin(x*freq*1.6+phase*.9)*amp*.45); } ctx.lineTo(c.width,c.height); ctx.lineTo(0,c.height); ctx.fillStyle=`rgba(${r},${g},${b},${a})`; ctx.fill(); }
+  function moon(){ const mx=c.width*.15,my=c.height*.14; const mg=ctx.createRadialGradient(mx,my,0,mx,my,120); mg.addColorStop(0,'rgba(200,240,255,0.22)'); mg.addColorStop(.5,'rgba(100,200,240,0.08)'); mg.addColorStop(1,'transparent'); ctx.beginPath(); ctx.arc(mx,my,120,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill(); const mc=ctx.createRadialGradient(mx-6,my-6,0,mx,my,38); mc.addColorStop(0,'rgba(230,250,255,0.95)'); mc.addColorStop(.6,'rgba(180,220,240,0.7)'); mc.addColorStop(1,'rgba(100,180,220,0.2)'); ctx.beginPath(); ctx.arc(mx,my,38,0,Math.PI*2); ctx.fillStyle=mc; ctx.fill(); ctx.beginPath(); ctx.arc(mx+12,my-8,32,0,Math.PI*2); ctx.fillStyle='rgba(0,20,50,0.35)'; ctx.fill(); }
+  let bx=c.width*.25;
+  function boat(x,y){ ctx.save(); ctx.translate(x,y+Math.sin(t*.8)*4); ctx.fillStyle='rgba(150,100,50,0.85)'; ctx.beginPath(); ctx.moveTo(-35,0); ctx.lineTo(35,0); ctx.quadraticCurveTo(38,8,-35,8); ctx.closePath(); ctx.fill(); ctx.fillStyle='rgba(200,160,80,0.75)'; ctx.fillRect(-18,-14,24,14); ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.beginPath(); ctx.moveTo(-5,-14); ctx.lineTo(-5,-60); ctx.lineTo(22,-14); ctx.closePath(); ctx.fill(); ctx.fillStyle='rgba(218,37,29,0.9)'; ctx.fillRect(-6,-62,2,22); ctx.beginPath(); ctx.moveTo(-4,-62); ctx.lineTo(10,-57); ctx.lineTo(-4,-52); ctx.fill(); ctx.restore(); }
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height); const W=c.width,H=c.height;
+    const sky=ctx.createLinearGradient(0,0,0,H*.7); sky.addColorStop(0,'#00060f'); sky.addColorStop(.5,'#001428'); sky.addColorStop(1,'#003055'); ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
+    moon();
+    const sea=ctx.createLinearGradient(0,H*.62,0,H); sea.addColorStop(0,'#004466'); sea.addColorStop(.5,'#002233'); sea.addColorStop(1,'#000d1c'); ctx.fillStyle=sea; ctx.fillRect(0,H*.62,W,H);
+    wave(H*.63,18,.007,t*.5,0,100,160,.45); wave(H*.67,14,.009,t*.4+1,0,120,180,.5); wave(H*.71,10,.012,t*.55+2,0,150,200,.55); wave(H*.75,7,.015,t*.65+3,0,180,210,.5);
+    bx+=.22; if(bx>W*.75) bx=W*.1; boat(bx,H*.68);
+    for(let i=0;i<6;i++){ const birdX=((t*18+i*185)%(W+80))-40,birdY=H*.22+Math.sin(t*.9+i)*16+i*20; ctx.strokeStyle=`rgba(200,230,255,${.2+i*.04})`; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(birdX-7,birdY); ctx.quadraticCurveTo(birdX-3,birdY-5,birdX,birdY); ctx.quadraticCurveTo(birdX+3,birdY-5,birdX+7,birdY); ctx.stroke(); }
+    for(let i=0;i<12;i++){ const sx=W*(.05+i*.08)+Math.sin(t*1.5+i)*20,sy=H*.73+Math.cos(t+i*.7)*5; ctx.beginPath(); ctx.arc(sx,sy,1.5,0,Math.PI*2); ctx.fillStyle=`rgba(180,240,255,${.1+.15*Math.abs(Math.sin(t*2+i))})`; ctx.fill(); }
+    t+=.011; requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* MAP: dùng Google Maps iframe trong HTML */
+
+/* ============================================================
+   TICKER
+   ============================================================ */
+(function(){ const el=document.getElementById('tickerInner'); el.innerHTML=[...tickerItems,...tickerItems].map(t=>`<span>${t}</span>`).join(''); })();
+
+/* ============================================================
+   PLEDGE CARDS
+   ============================================================ */
+(function(){
+  const grid=document.getElementById('pledgeGrid');
+  pledgesData.forEach(p=>{ const d=document.createElement('div'); d.className='pledge-card reveal'; d.innerHTML=`<div class="accent-line" style="background:${p.color}"></div><div class="pledge-icon">${p.icon}</div><div class="pledge-title">${p.title}</div><div class="pledge-text">${p.text}</div><span class="tag" style="background:${p.tagColor};color:${p.tagTextColor}">${p.tag}</span>`; d.addEventListener('mouseenter',()=>d.style.boxShadow=`0 20px 50px rgba(0,0,0,.5), 0 0 0 1px ${p.color}55`); d.addEventListener('mouseleave',()=>d.style.boxShadow=''); grid.appendChild(d); });
+})();
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+(function(){
+  const list = document.getElementById('timelineList');
+  timelineData.forEach((item, i) => {
+    const isLeft = i % 2 === 0;
+    const d = document.createElement('div');
+    d.className = 'tl-item reveal';
+
+    const contentHTML = `
+      <div class="tl-year">${item.year}</div>
+      <div class="tl-title">${item.title}</div>
+      <div class="tl-desc">${item.desc}</div>`;
+
+    const dot = `<div class="tl-dot-wrap"><div class="tl-dot">${item.icon}</div></div>`;
+
+    if (isLeft) {
+      // Desktop: [tl-left] [dot] [tl-mirror hidden on desktop, shown on mobile]
+      // Mobile:  tl-left ẩn, tl-mirror hiện
+      d.innerHTML = `
+        <div class="tl-content tl-left">${contentHTML}</div>
+        ${dot}
+        <div class="tl-content tl-mirror">${contentHTML}</div>`;
+    } else {
+      // Desktop: [tl-empty] [dot] [tl-right]
+      // Mobile:  tl-empty ẩn, tl-right hiện bình thường
+      d.innerHTML = `
+        <div class="tl-empty"></div>
+        ${dot}
+        <div class="tl-content tl-right">${contentHTML}</div>`;
+    }
+
+    list.appendChild(d);
+  });
+})();
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+let qIdx=0,score=0,answered=false;
+function loadQuiz(){ if(qIdx>=quizData.length){ showResult(); return; } const q=quizData[qIdx]; document.getElementById('quizFill').style.width=`${(qIdx/quizData.length)*100}%`; document.getElementById('quizNum').textContent=`Câu ${qIdx+1} / ${quizData.length}`; document.getElementById('quizQuestion').textContent=q.q; document.getElementById('quizExplain').style.display='none'; document.getElementById('quizNextBtn').style.display='none'; answered=false; const opts=document.getElementById('quizOptions'); opts.innerHTML=''; ['A','B','C','D'].forEach((l,i)=>{ const btn=document.createElement('div'); btn.className='quiz-option'; btn.innerHTML=`<span class="quiz-option-letter">${l}</span>${q.opts[i]}`; btn.addEventListener('click',()=>selectAnswer(i)); opts.appendChild(btn); }); }
+function selectAnswer(i){ if(answered)return; answered=true; const q=quizData[qIdx]; const opts=document.querySelectorAll('.quiz-option'); opts.forEach(o=>o.classList.add('disabled')); if(i===q.ans){ opts[i].classList.add('correct'); score++; } else { opts[i].classList.add('wrong'); opts[q.ans].classList.add('correct'); } document.getElementById('quizScore').textContent=`Điểm: ${score}`; const exp=document.getElementById('quizExplain'); exp.textContent='💡 '+q.explain; exp.style.display='block'; document.getElementById('quizNextBtn').style.display='inline-flex'; }
+document.getElementById('quizNextBtn').addEventListener('click',()=>{ qIdx++; loadQuiz(); });
+function showResult(){ document.getElementById('quiz-main').style.display='none'; document.getElementById('quiz-result').style.display='block'; document.getElementById('quizFill').style.width='100%'; const pct=Math.round(score/quizData.length*100); document.getElementById('resultIcon').textContent=['😔','🙁','🙂','😊','🎉','🏆'][Math.floor(pct/20)]; document.getElementById('resultScore').textContent=`${score}/${quizData.length}`; document.getElementById('resultTitle').textContent=['Cần cố gắng thêm!','Bắt đầu tốt!','Khá tốt!','Giỏi lắm!','Xuất sắc!','Hoàn hảo! 🌊'][Math.floor(pct/20)]; document.getElementById('resultMsg').textContent=pct===100?'Tuyệt vời! Bạn am hiểu sâu sắc về biển đảo Quảng Ninh!':pct>=70?'Rất tốt! Hãy tiếp tục tìm hiểu thêm nhé!':pct>=40?'Hãy khám phá thêm về vùng biển đảo Quảng Ninh hùng vĩ!':'Đừng nản! Hãy cùng tìm hiểu về biển đảo Quảng Ninh — niềm tự hào quê hương!'; }
+function restartQuiz(){ qIdx=0; score=0; answered=false; document.getElementById('quiz-main').style.display='block'; document.getElementById('quiz-result').style.display='none'; document.getElementById('quizScore').textContent='Điểm: 0'; loadQuiz(); }
+loadQuiz();
+
+/* ============================================================
+   🔥 PLEDGE WALL — FIREBASE REALTIME
+   ============================================================ */
+function formatTime(ts) {
+  if (!ts) return 'Vừa xong';
+  const d = ts.toDate ? ts.toDate() : new Date(ts);
+  const diff = Math.floor((Date.now() - d.getTime()) / 1000);
+  if (diff < 60)  return 'Vừa xong';
+  if (diff < 3600) return `${Math.floor(diff/60)} phút trước`;
+  if (diff < 86400) return `${Math.floor(diff/3600)} giờ trước`;
+  return `${Math.floor(diff/86400)} ngày trước`;
+}
+
+function createWallCard(data) {
+  const d = document.createElement('div');
+  d.className = 'wall-card';
+  d.innerHTML = `
+    <div class="wc-name">⛵ ${escHtml(data.name)}</div>
+    <div class="wc-text">"${escHtml(data.text)}"</div>
+    <div class="wc-time">${formatTime(data.createdAt)}</div>
+  `;
+  return d;
+}
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderWallFromSnapshot(snapshot) {
+  const wall = document.getElementById('pledgeWall');
+  wall.innerHTML = '';
+  if (snapshot.empty) {
+    wall.innerHTML = '<div class="wall-loading" style="opacity:.5">Chưa có lời cam kết nào. Hãy là người đầu tiên! 🌊</div>';
+    return;
+  }
+  snapshot.forEach(doc => {
+    wall.appendChild(createWallCard(doc.data()));
+  });
+}
+
+// Lắng nghe realtime từ Firestore
+function initWallListener() {
+  if (!firebaseReady || !db) {
+    setFbStatus('error', 'Chưa cấu hình Firebase');
+    document.getElementById('pledgeWall').innerHTML =
+      '<div class="wall-error">⚠️ Firebase chưa được cấu hình. Xem hướng dẫn trong <code>README-firebase.md</code></div>';
+    return;
+  }
+
+  setFbStatus('', 'Đang kết nối...');
+
+  db.collection('pledges')
+    .orderBy('createdAt', 'desc')
+    .limit(50)
+    .onSnapshot(
+      snapshot => {
+        setFbStatus('connected', `Đã kết nối · ${snapshot.size} lời cam kết`);
+        renderWallFromSnapshot(snapshot);
+      },
+      err => {
+        console.error('Firestore error:', err);
+        setFbStatus('error', 'Lỗi kết nối Firebase');
+        document.getElementById('pledgeWall').innerHTML =
+          `<div class="wall-error">⚠️ Không thể tải dữ liệu: ${err.message}</div>`;
+      }
+    );
+}
+
+async function addPledge() {
+  const nameEl = document.getElementById('wallName');
+  const textEl = document.getElementById('wallText');
+  const btn    = document.getElementById('wallSubmitBtn');
+  const name   = nameEl.value.trim();
+  const text   = textEl.value.trim();
+
+  if (!name || !text) {
+    alert('Vui lòng điền tên và lời cam kết của bạn!');
+    return;
+  }
+  if (!firebaseReady || !db) {
+    alert('Firebase chưa được cấu hình. Vui lòng xem README-firebase.md');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Đang gửi...';
+
+  try {
+    await db.collection('pledges').add({
+      name:      name,
+      text:      text,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+    nameEl.value = '';
+    textEl.value = '';
+    document.getElementById('pledgeWall').scrollIntoView({ behavior:'smooth', block:'start' });
+  } catch(err) {
+    alert('Gửi thất bại: ' + err.message);
+    console.error(err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '⛵ Gửi lời cam kết';
+  }
+}
+
+// initWallListener() sẽ được gọi tự động sau khi Firebase load xong
+
+/* ============================================================
+   COUNTER ANIMATION
+   ============================================================ */
+function animateCount(el){ const target=+el.dataset.target,dur=1800,start=performance.now(); function step(now){ const p=Math.min((now-start)/dur,1),e=1-Math.pow(1-p,3); el.textContent=Math.round(e*target).toLocaleString('vi-VN'); if(p<1) requestAnimationFrame(step); } requestAnimationFrame(step); }
+
+/* ============================================================
+   INTERSECTION OBSERVER
+   ============================================================ */
+const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); e.target.querySelectorAll('.count').forEach(animateCount); obs.unobserve(e.target); } }); },{threshold:0.14});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ============================================================
+   BACK TO TOP + NAV HIGHLIGHT
+   ============================================================ */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{ btt.classList.toggle('show',window.scrollY>400); });
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{ let cur=''; sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-110) cur=s.id; }); navLinks.forEach(a=>{ a.style.color=a.getAttribute('href')==='#'+cur?'#fff':''; }); });
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fec1de00b6e84cc',t:'MTc3OTI4ODIzOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<!-- v-fix-timeline -->
+</html>
