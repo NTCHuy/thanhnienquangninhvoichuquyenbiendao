@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thanh Niên Quảng Ninh Với Chủ Quyền Biển Đảo</title>
+<title>Quảng Ninh — Vùng Đông Bắc Giữ Vững Chủ Quyền Biển Đảo</title>
 <style>
 :root {
   --red:   #da251d;
@@ -102,7 +102,7 @@ nav {
 
 .hero-sub {
   font-size:15.5px; color:rgba(255,255,255,.68); margin:20px auto 34px;
-  max-width:560px; line-height:1.75; animation:fadeUp .9s .35s ease both;
+  max-width:620px; line-height:1.75; animation:fadeUp .9s .35s ease both;
 }
 .hero-sub span { color:var(--gold); font-weight:700; }
 .hero-sub em   { color:var(--teal); font-style:normal; font-weight:600; }
@@ -270,7 +270,6 @@ section { padding:88px 0; }
 .tl-left  { text-align:right; padding-right:28px; }
 .tl-right  { text-align:left;  padding-left:28px; }
 .tl-empty  { visibility:hidden; }
-/* tl-mirror: bản sao nội dung cho mobile, ẩn trên desktop */
 .tl-mirror { display:none; }
 .tl-year  { color:var(--gold); font-size:12px; font-weight:800; margin-bottom:6px; letter-spacing:1px; }
 .tl-title { font-size:16px; font-weight:700; margin-bottom:8px; }
@@ -280,11 +279,7 @@ section { padding:88px 0; }
 @media(max-width:700px){
   nav { padding:0 16px; }
   .nav-links { display:none; }
-
-  /* Đường dọc sát trái */
   .timeline-list::before { left:20px; transform:none; }
-
-  /* Reset grid, chuyển sang flex 1 hàng */
   .tl-item {
     display:flex !important;
     flex-direction:row !important;
@@ -292,14 +287,8 @@ section { padding:88px 0; }
     margin-bottom:28px !important;
     gap:0 !important;
   }
-
-  /* Ẩn ô trống */
   .tl-empty { display:none !important; }
-
-  /* Ẩn content bên trái trên desktop (tl-left) */
   .tl-content.tl-left { display:none !important; }
-
-  /* Hiện bản sao mobile (tl-mirror) thay thế tl-left */
   .tl-content.tl-mirror {
     display:block !important;
     flex:1 !important;
@@ -309,8 +298,6 @@ section { padding:88px 0; }
     margin:0 !important;
     order:2;
   }
-
-  /* Dot: cố định bên trái */
   .tl-dot-wrap {
     flex-shrink:0 !important;
     width:40px !important;
@@ -323,8 +310,6 @@ section { padding:88px 0; }
     height:38px !important;
     font-size:15px !important;
   }
-
-  /* Content bên phải (tl-right): hiển thị đầy đủ, căn trái */
   .tl-content.tl-right {
     display:block !important;
     flex:1 !important;
@@ -510,7 +495,6 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 #btt:hover { transform:scale(1.12) translateY(-2px); }
 #btt.show  { display:flex; }
 
-
 </style>
 </head>
 <body>
@@ -520,14 +504,14 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">
-    <div class="nav-emblem">⛵</div>
+    <div class="nav-emblem">⚓</div>
     <div class="nav-brand">
-      <span class="n1">Thanh Niên Quảng Ninh</span>
+      <span class="n1">Quảng Ninh — Vùng Đông Bắc</span>
       <span class="n2">Chủ Quyền Biển Đảo</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#stats">Quảng Ninh</a></li>
+    <li><a href="#stats">Vị trí chiến lược</a></li>
     <li><a href="#map">Bản đồ</a></li>
     <li><a href="#pledges">Hành động</a></li>
     <li><a href="#timeline">Lịch sử</a></li>
@@ -542,15 +526,14 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
   <canvas id="starsCanvas"></canvas>
   <canvas id="karst-layer"></canvas>
   <div class="hero-content">
-    <div class="hero-badge"><div class="pulse-dot"></div>Tỉnh Quảng Ninh — Vùng Biển Thiêng Liêng</div>
+    <div class="hero-badge"><div class="pulse-dot"></div>Vùng Đông Bắc — Cửa ngõ Biển Thiêng Liêng</div>
     <h1 class="hero-title">
-      <span class="t1">Thanh Niên Quảng Ninh Với</span>
-      <span class="t2">Chủ Quyền<br>Biển Đảo</span>
-      <span class="t3">Bảo Vệ – Gìn Giữ – Phát Triển</span>
+      <span class="t1">Quảng Ninh Vùng Đông Bắc</span>
+      <span class="t2">Giữ Vững<br>Chủ Quyền<br>Biển Đảo</span>
+      <span class="t3">Cô Tô · Trà Cổ · Vân Đồn · Bái Tử Long</span>
     </h1>
     <p class="hero-sub">
-      Từ <span>Vịnh Hạ Long</span> huyền thoại đến <em>Vịnh Bái Tử Long</em> hùng vĩ —<br>
-      Thanh niên Quảng Ninh tiên phong giữ gìn chủ quyền biển đảo thiêng liêng của Tổ quốc.
+      Nằm ở <span>cửa ngõ Đông Bắc</span> của Tổ quốc, Quảng Ninh giữ vai trò chiến lược đặc biệt với <em>hơn 250 km bờ biển</em>, tiếp giáp biên giới quốc tế, là lá chắn vững chắc bảo vệ chủ quyền biển đảo.
     </p>
     <div class="hero-buttons">
       <a href="#pledges" class="btn btn-primary">✊ Tham gia ngay</a>
@@ -571,17 +554,17 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 <section id="stats">
   <div class="container">
     <div class="text-center reveal">
-      <div class="section-tag">Quảng Ninh — Con số biết nói</div>
-      <h2 class="section-title">Vùng Biển <span>Quảng Ninh</span> — Tự Hào <em>Đất Mỏ</em></h2>
-      <p class="section-desc">Quảng Ninh sở hữu vùng biển rộng lớn, giàu tài nguyên và mang tầm quan trọng chiến lược đặc biệt với quốc gia</p>
+      <div class="section-tag">Vị trí chiến lược vùng Đông Bắc</div>
+      <h2 class="section-title">Quảng Ninh — <span>Cửa Ngõ Biển</span> Phía <em>Đông Bắc Tổ Quốc</em></h2>
+      <p class="section-desc">Quảng Ninh không chỉ giàu tài nguyên mà còn là vùng đệm chiến lược, tiếp giáp biên giới, giữ vai trò then chốt trong bảo vệ chủ quyền biển đảo phía Đông Bắc</p>
     </div>
     <div class="stats-grid">
-      <div class="stat-card reveal"><div class="stat-icon">🌊</div><div class="stat-num"><span class="count" data-target="250">0</span></div><div class="stat-unit">km</div><div class="stat-label">Chiều dài bờ biển Quảng Ninh</div></div>
-      <div class="stat-card reveal"><div class="stat-icon">🏝️</div><div class="stat-num"><span class="count" data-target="2077">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo lớn nhỏ trong tỉnh</div></div>
-      <div class="stat-card reveal"><div class="stat-icon">🦅</div><div class="stat-num"><span class="count" data-target="1553">0</span></div><div class="stat-unit">km²</div><div class="stat-label">Diện tích Vịnh Hạ Long</div></div>
-      <div class="stat-card reveal"><div class="stat-icon">🌿</div><div class="stat-num"><span class="count" data-target="775">0</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo trong Vịnh Hạ Long</div></div>
-      <div class="stat-card reveal"><div class="stat-icon">🏆</div><div class="stat-num"><span class="count" data-target="2">0</span></div><div class="stat-unit">lần</div><div class="stat-label">UNESCO công nhận Di sản Thế giới</div></div>
-      <div class="stat-card reveal"><div class="stat-icon">⚓</div><div class="stat-num"><span class="count" data-target="40">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">năm</div><div class="stat-label">Thanh niên QN bám biển giữ đảo</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🌊</div><div class="stat-num"><span class="count" data-target="250">0</span></div><div class="stat-unit">km</div><div class="stat-label">Bờ biển kéo dài từ Trà Cổ đến Đông Triều</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🏝️</div><div class="stat-num"><span class="count" data-target="2077">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo lớn nhỏ khắp vùng biển Quảng Ninh</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🦅</div><div class="stat-num"><span class="count" data-target="1553">0</span></div><div class="stat-unit">km²</div><div class="stat-label">Diện tích Vịnh Hạ Long — Di sản UNESCO</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🌿</div><div class="stat-num"><span class="count" data-target="775">0</span></div><div class="stat-unit">hòn đảo</div><div class="stat-label">Đảo trong Vịnh Hạ Long và Bái Tử Long</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">🏆</div><div class="stat-num"><span class="count" data-target="3">0</span></div><div class="stat-unit">lần</div><div class="stat-label">UNESCO công nhận Di sản Thế giới (mới nhất 2023)</div></div>
+      <div class="stat-card reveal"><div class="stat-icon">⚓</div><div class="stat-num"><span class="count" data-target="40">0</span><span style="font-size:24px">+</span></div><div class="stat-unit">năm</div><div class="stat-label">Thanh niên QN bám biển giữ đảo Đông Bắc</div></div>
     </div>
   </div>
 </section>
@@ -591,8 +574,8 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
   <div class="container">
     <div class="text-center reveal">
       <div class="section-tag">Bản đồ tương tác</div>
-      <h2 class="section-title">Vùng Biển <span>Quảng Ninh</span> — Nhìn Từ Trên Cao</h2>
-      <p class="section-desc">Khám phá Vịnh Hạ Long, Vịnh Bái Tử Long, đảo Cô Tô và các địa danh biển đảo nổi bật của Quảng Ninh trực tiếp trên Google Maps</p>
+      <h2 class="section-title">Vùng Biển <span>Đông Bắc</span> — Nhìn Từ Trên Cao</h2>
+      <p class="section-desc">Khám phá Cô Tô, Trà Cổ, Vân Đồn, Vịnh Hạ Long, Bái Tử Long — những địa danh chiến lược giữ vững chủ quyền biển đảo phía Đông Bắc Tổ quốc</p>
     </div>
     <div class="map-wrap reveal" style="min-height:auto; border-radius:18px; overflow:hidden; border:2px solid rgba(0,200,215,0.25); box-shadow:0 0 40px rgba(0,200,215,0.1);">
       <iframe
@@ -614,8 +597,8 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
   <div class="container">
     <div class="text-center reveal">
       <div class="section-tag">Thanh Niên Hành Động</div>
-      <h2 class="section-title">6 Cam Kết Của <span>Thanh Niên Quảng Ninh</span></h2>
-      <p class="section-desc">Sinh ra và lớn lên bên những vịnh biển huyền thoại, thanh niên Quảng Ninh mang trên vai trách nhiệm đặc biệt với biển đảo Tổ quốc</p>
+      <h2 class="section-title">6 Cam Kết Bảo Vệ <span>Chủ Quyền Biển Đảo</span></h2>
+      <p class="section-desc">Thanh niên Quảng Ninh — đặc biệt là vùng Đông Bắc — mang trên vai trách nhiệm bảo vệ từng tấc biển, từng hòn đảo thiêng liêng của Tổ quốc</p>
     </div>
     <div class="pledge-grid" id="pledgeGrid"></div>
   </div>
@@ -625,9 +608,9 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 <section id="timeline">
   <div class="container">
     <div class="text-center reveal">
-      <div class="section-tag">Lịch sử Quảng Ninh</div>
-      <h2 class="section-title">Hành Trình <span>Giữ Biển</span> Của Quảng Ninh</h2>
-      <p class="section-desc">Những cột mốc lịch sử gắn liền với vùng đất và vùng biển Quảng Ninh — từ quá khứ hào hùng đến hiện tại tự hào</p>
+      <div class="section-tag">Lịch sử vùng Đông Bắc</div>
+      <h2 class="section-title">Hành Trình <span>Giữ Biển Giữ Đảo</span> Của Quảng Ninh</h2>
+      <p class="section-desc">Những cột mốc lịch sử khẳng định vị trí chiến lược và trách nhiệm bảo vệ chủ quyền biển đảo vùng Đông Bắc — từ Cô Tô, Trà Cổ đến Vân Đồn</p>
     </div>
     <div class="timeline-list" id="timelineList"></div>
   </div>
@@ -639,7 +622,7 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
     <div class="text-center reveal">
       <div class="section-tag">Trắc nghiệm</div>
       <h2 class="section-title">Bạn Hiểu Bao Nhiêu Về <span>Biển Đảo Quảng Ninh?</span></h2>
-      <p class="section-desc">Hãy thử thách bản thân với 7 câu hỏi về vùng biển đảo Quảng Ninh và chủ quyền biển quốc gia!</p>
+      <p class="section-desc">Hãy thử thách bản thân với 7 câu hỏi về vị trí chiến lược vùng Đông Bắc, vai trò Cô Tô — Trà Cổ — Vân Đồn và trách nhiệm bảo vệ chủ quyền!</p>
     </div>
     <div class="quiz-box reveal">
       <div id="quiz-main">
@@ -671,11 +654,11 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
     <div class="text-center reveal">
       <div class="section-tag">Bức Tường Cam Kết</div>
       <h2 class="section-title">Lời Thề Của <span>Thanh Niên Quảng Ninh</span></h2>
-      <p class="section-desc">Hãy để lại lời cam kết của bạn — mỗi lời thề là một viên đá vững chắc bảo vệ biển đảo quê hương</p>
+      <p class="section-desc">Hãy để lại lời cam kết của bạn — mỗi lời thề là một viên đá vững chắc bảo vệ chủ quyền biển đảo vùng Đông Bắc Tổ quốc</p>
     </div>
     <div class="wall-input-wrap reveal">
-      <input type="text" id="wallName" placeholder="Tên của bạn (vd: Nguyễn Văn A, Hạ Long / Móng Cái / Cẩm Phả...)" maxlength="70">
-      <textarea id="wallText" rows="3" placeholder="Viết lời cam kết của bạn với biển đảo Quảng Ninh và Tổ quốc..." maxlength="220"></textarea>
+      <input type="text" id="wallName" placeholder="Tên của bạn (vd: Nguyễn Văn A, Cô Tô / Trà Cổ / Vân Đồn...)" maxlength="70">
+      <textarea id="wallText" rows="3" placeholder="Viết lời cam kết bảo vệ chủ quyền biển đảo Quảng Ninh và Tổ quốc..." maxlength="220"></textarea>
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
         <button class="wall-submit" id="wallSubmitBtn" onclick="addPledge()">⛵ Gửi lời cam kết</button>
         <div class="firebase-status" id="fbStatus">
@@ -696,8 +679,8 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 <!-- CTA -->
 <section id="cta">
   <div class="container">
-    <h2>Quảng Ninh — Vùng Biển Thiêng Liêng<br>Mãi Thuộc Về Tổ Quốc Việt Nam!</h2>
-    <p>Từ Vịnh Hạ Long đến Bái Tử Long, từ Cô Tô đến Vĩnh Thực —<br>Thanh niên Quảng Ninh sẵn sàng cống hiến, bảo vệ từng tấc biển quê hương.</p>
+    <h2>Quảng Ninh — Vùng Đông Bắc Giữ Vững<br>Chủ Quyền Biển Đảo Tổ Quốc!</h2>
+    <p>Từ Trà Cổ đến Cô Tô, từ Vân Đồn đến Bái Tử Long —<br>Thanh niên Quảng Ninh kiên cường bảo vệ từng hải lý, từng hòn đảo thiêng liêng.</p>
     <div class="cta-buttons">
       <a href="#wall" class="btn btn-white">✊ Để lại lời cam kết</a>
       <a href="#quiz" class="btn btn-ghost">📚 Kiểm tra hiểu biết</a>
@@ -709,8 +692,8 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
-      <strong>Thanh Niên Quảng Ninh Với Chủ Quyền Biển Đảo</strong><br>
-      🇻🇳 Vịnh Hạ Long – Bái Tử Long – Cô Tô · Giữ vững biển đảo quê hương
+      <strong>Quảng Ninh Vùng Đông Bắc — Giữ Vững Chủ Quyền Biển Đảo</strong><br>
+      🇻🇳 Cô Tô – Trà Cổ – Vân Đồn – Bái Tử Long · Vùng Đông Bắc bảo vệ biển trời Tổ quốc
     </div>
     <div class="footer-right">
       <a class="social-btn" title="Chia sẻ">📢</a>
@@ -724,10 +707,8 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 
 <!-- ============================================================
      FIREBASE SDK (v9 compat)
-     THAY THẾ CÁC GIÁ TRỊ DƯỚI ĐÂY BẰNG CONFIG CỦA BẠN
      ============================================================ -->
 <script>
-// Firebase được load bất đồng bộ, không block trang
 (function() {
   function loadScript(src, cb) {
     var s = document.createElement('script');
@@ -747,7 +728,7 @@ footer { background:#00080f; padding:38px 0; border-top:1px solid rgba(0,200,215
 
 <script>
 /* ============================================================
-   🔥 FIREBASE CONFIG — ĐIỀN THÔNG TIN DỰ ÁN CỦA BẠN VÀO ĐÂY
+   🔥 FIREBASE CONFIG
    ============================================================ */
 const firebaseConfig = {
   apiKey: "AIzaSyBUZ5twbdLQzeN2IvQ9SUoeQwQfFUo-MwU",
@@ -795,46 +776,47 @@ function setFbStatus(state, text) {
    DATA
    ============================================================ */
 const tickerItems = [
-  'Vịnh Hạ Long — Di sản Thiên nhiên Thế giới UNESCO',
+  'Quảng Ninh — Cửa ngõ biển chiến lược phía Đông Bắc Tổ quốc',
+  'Cô Tô — Đảo tiền tiêu bảo vệ chủ quyền vùng biển Đông Bắc',
+  'Trà Cổ — Điểm cực Đông Bắc, nơi đón ánh bình minh đầu tiên',
+  'Vân Đồn — Cảng biển quốc tế và cửa ngõ giao thương Đông Bắc',
+  'Vịnh Bái Tử Long — Pháo đài tự nhiên bảo vệ vùng biển Quảng Ninh',
   'Quảng Ninh có hơn 2.077 hòn đảo lớn nhỏ',
-  'Bờ biển Quảng Ninh dài 250 km',
-  'Thanh niên Quảng Ninh — Tiên phong giữ biển',
-  'Cô Tô — Đảo tiền tiêu phía Đông Bắc Tổ quốc',
-  'Bái Tử Long — Vịnh biển hùng vĩ chưa khai phá',
-  'Móng Cái — Cửa ngõ biên giới biển Đông Bắc',
-  'Vịnh Hạ Long rộng 1.553 km² với 775 hòn đảo',
-  'Đất Mỏ — Vùng biển giàu tài nguyên chiến lược',
+  'Bờ biển Quảng Ninh dài 250 km từ Trà Cổ đến Đông Triều',
+  'Thanh niên Quảng Ninh — Tiên phong giữ biển giữ đảo Đông Bắc',
+  'Vịnh Hạ Long — Di sản UNESCO 3 lần, liên tỉnh đầu tiên Việt Nam (2023)',
 ];
 
 const pledgesData = [
-  { icon:'📚', color:'#0077a8', title:'Học & Hiểu', text:'Tích cực tìm hiểu lịch sử, địa lý, pháp lý về biển đảo Quảng Ninh và chủ quyền biển Việt Nam.', tag:'Tri thức', tagColor:'rgba(0,119,168,.22)', tagTextColor:'#7dd8f0' },
-  { icon:'🛡️', color:'#da251d', title:'Bảo Vệ Chủ Quyền', text:'Sẵn sàng tham gia dân quân biển, hỗ trợ lực lượng biên phòng bảo vệ vùng biển Đông Bắc Tổ quốc.', tag:'Dũng cảm', tagColor:'rgba(218,37,29,.2)', tagTextColor:'#ff9999' },
-  { icon:'🌿', color:'#00b894', title:'Bảo Vệ Môi Trường Biển', text:'Tham gia thu gom rác biển, bảo vệ hệ sinh thái san hô và đa dạng sinh học Vịnh Hạ Long, Bái Tử Long.', tag:'Xanh sạch', tagColor:'rgba(0,184,148,.2)', tagTextColor:'#a8e6cf' },
-  { icon:'📢', color:'#f39c12', title:'Lan Tỏa & Truyền Thông', text:'Quảng bá hình ảnh biển đảo Quảng Ninh, nâng cao nhận thức cộng đồng về chủ quyền quốc gia.', tag:'Cộng đồng', tagColor:'rgba(243,156,18,.2)', tagTextColor:'#ffd580' },
-  { icon:'⚓', color:'#8e44ad', title:'Hỗ Trợ Ngư Dân', text:'Đồng hành cùng ngư dân Quảng Ninh bám biển, hỗ trợ kinh tế hải sản và làng chài truyền thống.', tag:'Đoàn kết', tagColor:'rgba(142,68,173,.2)', tagTextColor:'#d7b8f3' },
-  { icon:'🏆', color:'#16a085', title:'Phát Triển Kinh Tế Biển', text:'Xây dựng Quảng Ninh thành trung tâm kinh tế biển xanh, du lịch bền vững gắn với bảo vệ chủ quyền.', tag:'Phát triển', tagColor:'rgba(22,160,133,.2)', tagTextColor:'#76d7c4' },
+  { icon:'📚', color:'#0077a8', title:'Hiểu Rõ Vị Trí Chiến Lược', text:'Tích cực học tập về địa lý, lịch sử, pháp lý về vị trí chiến lược của Quảng Ninh ở vùng Đông Bắc và vai trò của Cô Tô, Trà Cổ, Vân Đồn.', tag:'Tri thức', tagColor:'rgba(0,119,168,.22)', tagTextColor:'#7dd8f0' },
+  { icon:'🛡️', color:'#da251d', title:'Bảo Vệ Chủ Quyền Biển Đảo', text:'Sẵn sàng tham gia lực lượng dân quân biển, hỗ trợ biên phòng tuần tra bảo vệ vùng biển Đông Bắc, đặc biệt khu vực Cô Tô và Trà Cổ.', tag:'Dũng cảm', tagColor:'rgba(218,37,29,.2)', tagTextColor:'#ff9999' },
+  { icon:'🌿', color:'#00b894', title:'Bảo Vệ Môi Trường Biển', text:'Tham gia thu gom rác biển, bảo vệ hệ sinh thái Vịnh Hạ Long, Bái Tử Long và khu bảo tồn biển Cô Tô — nền tảng chủ quyền bền vững.', tag:'Xanh sạch', tagColor:'rgba(0,184,148,.2)', tagTextColor:'#a8e6cf' },
+  { icon:'📢', color:'#f39c12', title:'Tuyên Truyền Vùng Đông Bắc', text:'Lan tỏa hình ảnh và vai trò chiến lược của Cô Tô, Trà Cổ, Vân Đồn, nâng cao nhận thức cộng đồng về bảo vệ chủ quyền biển đảo.', tag:'Cộng đồng', tagColor:'rgba(243,156,18,.2)', tagTextColor:'#ffd580' },
+  { icon:'⚓', color:'#8e44ad', title:'Đồng Hành Ngư Dân Biên Cương', text:'Hỗ trợ ngư dân vùng Đông Bắc bám biển, giữ ngư trường truyền thống, cùng bảo vệ ngư trường và chủ quyền tại Cô Tô, Trà Cổ.', tag:'Đoàn kết', tagColor:'rgba(142,68,173,.2)', tagTextColor:'#d7b8f3' },
+  { icon:'🏆', color:'#16a085', title:'Phát Triển Kinh Tế Biển Xanh', text:'Xây dựng Quảng Ninh thành trung tâm kinh tế biển xanh vùng Đông Bắc, gắn phát triển với bảo vệ chủ quyền tuyệt đối.', tag:'Phát triển', tagColor:'rgba(22,160,133,.2)', tagTextColor:'#76d7c4' },
 ];
 
 const timelineData = [
-  { year:'Thế kỷ XIII', icon:'⚔️', title:'Chiến thắng Bạch Đằng 1288', desc:'Hưng Đạo Vương Trần Quốc Tuấn đại phá quân Nguyên Mông trên sông Bạch Đằng (Quảng Ninh), khẳng định chủ quyền lãnh thổ và sức mạnh bảo vệ biển của dân tộc.' },
-  { year:'1962', icon:'🏛️', title:'Vịnh Hạ Long được xếp hạng di tích', desc:'Bộ Văn hóa xếp hạng Vịnh Hạ Long là di tích danh thắng cấp quốc gia, bước đầu khẳng định giá trị đặc biệt của vùng biển Quảng Ninh.' },
-  { year:'1994', icon:'🌍', title:'UNESCO công nhận lần đầu', desc:'Vịnh Hạ Long lần đầu tiên được UNESCO công nhận là Di sản Thiên nhiên Thế giới về giá trị thẩm mỹ — niềm tự hào của Quảng Ninh và cả dân tộc.' },
-  { year:'2000', icon:'🔬', title:'UNESCO công nhận lần thứ hai', desc:'Vịnh Hạ Long tiếp tục được UNESCO vinh danh lần thứ hai về giá trị địa chất địa mạo, khẳng định tầm quan trọng toàn cầu của vùng biển đảo Quảng Ninh.' },
-  { year:'2013', icon:'🗺️', title:'Quy hoạch phát triển kinh tế biển', desc:'Quảng Ninh ban hành quy hoạch tổng thể phát triển kinh tế biển gắn với bảo vệ chủ quyền, đặt mục tiêu thành trung tâm du lịch biển quốc tế.' },
-  { year:'2020', icon:'💧', title:'Khu bảo tồn biển Cô Tô – Đảo Trần', desc:'Khu bảo tồn biển Cô Tô – Đảo Trần được thành lập, bảo vệ hệ sinh thái và khẳng định chủ quyền trên vùng biển Đông Bắc xa xôi của Quảng Ninh.' },
+  { year:'Thế kỷ XIII', icon:'⚔️', title:'Chiến thắng Bạch Đằng 1288', desc:'Hưng Đạo Vương Trần Quốc Tuấn đại phá quân Nguyên Mông trên sông Bạch Đằng (Quảng Ninh), khẳng định chủ quyền lãnh thổ và sức mạnh bảo vệ biển của dân tộc vùng Đông Bắc.' },
+  { year:'1698', icon:'⚓', title:'Mở mang vùng biển Đông Bắc', desc:'Chúa Nguyễn cho lập phủ Hải Ninh (nay là Quảng Ninh), khẳng định quyền cai quản vùng biển Đông Bắc từ Trà Cổ đến Vân Đồn, mở đường giao thương biển.' },
+  { year:'1962', icon:'🏛️', title:'Vịnh Hạ Long được xếp hạng di tích', desc:'Bộ Văn hóa xếp hạng Vịnh Hạ Long là di tích danh thắng cấp quốc gia, bước đầu khẳng định giá trị đặc biệt của vùng biển Quảng Ninh nói riêng và Đông Bắc nói chung.' },
+  { year:'1994', icon:'🌍', title:'UNESCO công nhận lần đầu', desc:'Vịnh Hạ Long lần đầu được UNESCO công nhận là Di sản Thiên nhiên Thế giới về giá trị thẩm mỹ — niềm tự hào của vùng Đông Bắc và cả dân tộc.' },
+  { year:'2000', icon:'🔬', title:'UNESCO công nhận lần thứ hai', desc:'Vịnh Hạ Long tiếp tục được UNESCO vinh danh lần thứ hai về giá trị địa chất địa mạo, khẳng định tầm quan trọng toàn cầu của vùng biển đảo Quảng Ninh vùng Đông Bắc.' },
+  { year:'2023', icon:'🏆', title:'UNESCO công nhận lần thứ ba', desc:'Tháng 9/2023, Vịnh Hạ Long được UNESCO công nhận lần thứ ba với ranh giới mở rộng sang quần đảo Cát Bà (Hải Phòng), trở thành Di sản Thiên nhiên Thế giới liên tỉnh đầu tiên của Việt Nam.' },
+  { year:'2013', icon:'🗺️', title:'Quy hoạch phát triển kinh tế biển', desc:'Quảng Ninh ban hành quy hoạch tổng thể phát triển kinh tế biển gắn với bảo vệ chủ quyền, đặt mục tiêu thành trung tâm du lịch biển quốc tế vùng Đông Bắc.' },
+  { year:'2020', icon:'💧', title:'Khu bảo tồn biển Cô Tô – Đảo Trần', desc:'Khu bảo tồn biển Cô Tô – Đảo Trần được thành lập, bảo vệ hệ sinh thái và khẳng định chủ quyền trên vùng biển tiền tiêu Đông Bắc xa xôi của Quảng Ninh.' },
   { year:'Hôm nay', icon:'✊', title:'Thanh niên Quảng Ninh tiếp lửa', desc:'Thế hệ trẻ Quảng Ninh kế thừa truyền thống cha ông, vừa phát triển kinh tế biển bền vững vừa kiên cường bảo vệ chủ quyền vùng biển Đông Bắc Tổ quốc.' },
 ];
 
 const quizData = [
-  { q:'Vịnh Hạ Long được UNESCO công nhận là Di sản Thiên nhiên Thế giới lần đầu vào năm nào?', opts:['1990','1994','1998','2000'], ans:1, explain:'Vịnh Hạ Long được UNESCO công nhận lần đầu vào năm 1994 về giá trị thẩm mỹ, và lần thứ hai năm 2000 về giá trị địa chất địa mạo.' },
-  { q:'Quảng Ninh có bao nhiêu hòn đảo lớn nhỏ?', opts:['Hơn 500','Hơn 1.000','Hơn 2.000','Hơn 3.000'], ans:2, explain:'Quảng Ninh có hơn 2.077 hòn đảo lớn nhỏ, chiếm 2/3 tổng số đảo của cả nước.' },
-  { q:'Trận chiến thắng lịch sử nào trên sông Bạch Đằng (Quảng Ninh) đánh bại quân Nguyên Mông?', opts:['Năm 1258','Năm 1285','Năm 1288','Năm 1300'], ans:2, explain:'Trận Bạch Đằng năm 1288 do Hưng Đạo Vương Trần Quốc Tuấn chỉ huy đã đánh bại hoàn toàn quân Nguyên Mông.' },
-  { q:'Đảo Cô Tô thuộc huyện nào của tỉnh Quảng Ninh?', opts:['Huyện Vân Đồn','Huyện Cô Tô','Huyện Tiên Yên','Huyện Đầm Hà'], ans:1, explain:'Cô Tô là huyện đảo tiền tiêu của tỉnh Quảng Ninh, nằm ở phía Đông Bắc, cách đất liền khoảng 60-100km.' },
-  { q:'Vịnh Bái Tử Long nằm ở đâu so với Vịnh Hạ Long?', opts:['Phía Tây','Phía Nam','Phía Đông Bắc','Phía Tây Nam'], ans:2, explain:'Vịnh Bái Tử Long nằm ở phía Đông Bắc của Vịnh Hạ Long, thuộc huyện Vân Đồn.' },
-  { q:'Chiều dài bờ biển của tỉnh Quảng Ninh là bao nhiêu?', opts:['Khoảng 100 km','Khoảng 150 km','Khoảng 200 km','Khoảng 250 km'], ans:3, explain:'Tỉnh Quảng Ninh có đường bờ biển dài khoảng 250 km, kéo dài từ Trà Cổ (Móng Cái) đến Đông Triều.' },
-  { q:'Khu vực nào của Quảng Ninh được mệnh danh là "nơi con rồng hạ xuống"?', opts:['Vịnh Bái Tử Long','Vịnh Hạ Long','Đảo Cô Tô','Hòn Gai'], ans:1, explain:'"Hạ Long" trong tiếng Việt có nghĩa là "rồng hạ xuống". Theo truyền thuyết, một đàn rồng đã hạ xuống vùng biển này và nhả ra những hòn đá ngọc.' },
+  { q:'Quảng Ninh nằm ở vị trí nào của Việt Nam, mang tầm chiến lược đặc biệt về biển đảo?', opts:['Vùng Tây Bắc','Vùng Đông Bắc','Vùng Tây Nam Bộ','Vùng Duyên hải Nam Trung Bộ'], ans:1, explain:'Quảng Ninh nằm ở vùng Đông Bắc Việt Nam, là cửa ngõ biển tiếp giáp biên giới quốc tế, giữ vai trò then chốt trong bảo vệ chủ quyền biển đảo phía Đông Bắc.' },
+  { q:'Đảo Cô Tô trong tỉnh Quảng Ninh được mệnh danh là gì về mặt chiến lược?', opts:['Đảo du lịch nghỉ dưỡng','Đảo tiền tiêu phía Đông Bắc','Đảo công nghiệp đóng tàu','Đảo trung chuyển hàng hóa'], ans:1, explain:'Cô Tô được mệnh danh là "đảo tiền tiêu phía Đông Bắc Tổ quốc", nằm ở vị trí chiến lược bảo vệ chủ quyền biển đảo vùng Đông Bắc.' },
+  { q:'Trà Cổ (Móng Cái, Quảng Ninh) là điểm cực nào của Việt Nam?', opts:['Cực Tây','Cực Nam','Cực Đông Bắc','Cực Bắc'], ans:2, explain:'Trà Cổ là điểm cực Đông Bắc của Việt Nam, nơi đón ánh bình minh đầu tiên và là vị trí chiến lược bảo vệ biên giới biển.' },
+  { q:'Huyện Vân Đồn (Quảng Ninh) có vai trò chiến lược gì?', opts:['Trung tâm công nghiệp than','Cảng biển quốc tế và cửa ngõ giao thương Đông Bắc','Thủ đô du lịch quốc gia','Trung tâm nông nghiệp lúa gạo'], ans:1, explain:'Vân Đồn là cảng biển quốc tế và cửa ngõ giao thương quan trọng của vùng Đông Bắc, đồng thời là địa bàn chiến lược bảo vệ vùng biển Quảng Ninh.' },
+  { q:'Vịnh Bái Tử Long nằm ở đâu so với Vịnh Hạ Long và có vai trò gì?', opts:['Phía Tây — khu công nghiệp','Phía Nam — cảng cá','Phía Đông Bắc — pháo đài tự nhiên bảo vệ biển','Phía Tây Nam — khu dân cư'], ans:2, explain:'Vịnh Bái Tử Long nằm ở phía Đông Bắc Vịnh Hạ Long, thuộc huyện Vân Đồn, đóng vai trò như "pháo đài tự nhiên" bảo vệ vùng biển Quảng Ninh.' },
+  { q:'Chiều dài bờ biển tỉnh Quảng Ninh kéo dài từ đâu đến đâu?', opts:['Từ Cô Tô đến Hạ Long','Từ Trà Cổ đến Đông Triều','Từ Móng Cái đến Cẩm Phả','Từ Vân Đồn đến Uông Bí'], ans:1, explain:'Tỉnh Quảng Ninh có đường bờ biển dài khoảng 250 km, kéo dài từ Trà Cổ (Móng Cái) đến Đông Triều, bao phủ toàn bộ vùng Đông Bắc ven biển.' },
+  { q:'Trách nhiệm chính của thanh niên Quảng Ninh đối với chủ quyền biển đảo là gì?', opts:['Chỉ phát triển du lịch','Bảo vệ từng tấc biển, từng hòn đảo thiêng liêng','Khai thác tài nguyên biển tối đa','Di cư ra đảo sinh sống'], ans:1, explain:'Thanh niên Quảng Ninh có trách nhiệm bảo vệ từng tấc biển, từng hòn đảo thiêng liêng của Tổ quốc, đặc biệt ở vùng Đông Bắc chiến lược.' },
 ];
-
 
 
 /* ============================================================
@@ -908,8 +890,6 @@ const quizData = [
   draw();
 })();
 
-/* MAP: dùng Google Maps iframe trong HTML */
-
 /* ============================================================
    TICKER
    ============================================================ */
@@ -941,15 +921,11 @@ const quizData = [
     const dot = `<div class="tl-dot-wrap"><div class="tl-dot">${item.icon}</div></div>`;
 
     if (isLeft) {
-      // Desktop: [tl-left] [dot] [tl-mirror hidden on desktop, shown on mobile]
-      // Mobile:  tl-left ẩn, tl-mirror hiện
       d.innerHTML = `
         <div class="tl-content tl-left">${contentHTML}</div>
         ${dot}
         <div class="tl-content tl-mirror">${contentHTML}</div>`;
     } else {
-      // Desktop: [tl-empty] [dot] [tl-right]
-      // Mobile:  tl-empty ẩn, tl-right hiện bình thường
       d.innerHTML = `
         <div class="tl-empty"></div>
         ${dot}
@@ -967,7 +943,7 @@ let qIdx=0,score=0,answered=false;
 function loadQuiz(){ if(qIdx>=quizData.length){ showResult(); return; } const q=quizData[qIdx]; document.getElementById('quizFill').style.width=`${(qIdx/quizData.length)*100}%`; document.getElementById('quizNum').textContent=`Câu ${qIdx+1} / ${quizData.length}`; document.getElementById('quizQuestion').textContent=q.q; document.getElementById('quizExplain').style.display='none'; document.getElementById('quizNextBtn').style.display='none'; answered=false; const opts=document.getElementById('quizOptions'); opts.innerHTML=''; ['A','B','C','D'].forEach((l,i)=>{ const btn=document.createElement('div'); btn.className='quiz-option'; btn.innerHTML=`<span class="quiz-option-letter">${l}</span>${q.opts[i]}`; btn.addEventListener('click',()=>selectAnswer(i)); opts.appendChild(btn); }); }
 function selectAnswer(i){ if(answered)return; answered=true; const q=quizData[qIdx]; const opts=document.querySelectorAll('.quiz-option'); opts.forEach(o=>o.classList.add('disabled')); if(i===q.ans){ opts[i].classList.add('correct'); score++; } else { opts[i].classList.add('wrong'); opts[q.ans].classList.add('correct'); } document.getElementById('quizScore').textContent=`Điểm: ${score}`; const exp=document.getElementById('quizExplain'); exp.textContent='💡 '+q.explain; exp.style.display='block'; document.getElementById('quizNextBtn').style.display='inline-flex'; }
 document.getElementById('quizNextBtn').addEventListener('click',()=>{ qIdx++; loadQuiz(); });
-function showResult(){ document.getElementById('quiz-main').style.display='none'; document.getElementById('quiz-result').style.display='block'; document.getElementById('quizFill').style.width='100%'; const pct=Math.round(score/quizData.length*100); document.getElementById('resultIcon').textContent=['😔','🙁','🙂','😊','🎉','🏆'][Math.floor(pct/20)]; document.getElementById('resultScore').textContent=`${score}/${quizData.length}`; document.getElementById('resultTitle').textContent=['Cần cố gắng thêm!','Bắt đầu tốt!','Khá tốt!','Giỏi lắm!','Xuất sắc!','Hoàn hảo! 🌊'][Math.floor(pct/20)]; document.getElementById('resultMsg').textContent=pct===100?'Tuyệt vời! Bạn am hiểu sâu sắc về biển đảo Quảng Ninh!':pct>=70?'Rất tốt! Hãy tiếp tục tìm hiểu thêm nhé!':pct>=40?'Hãy khám phá thêm về vùng biển đảo Quảng Ninh hùng vĩ!':'Đừng nản! Hãy cùng tìm hiểu về biển đảo Quảng Ninh — niềm tự hào quê hương!'; }
+function showResult(){ document.getElementById('quiz-main').style.display='none'; document.getElementById('quiz-result').style.display='block'; document.getElementById('quizFill').style.width='100%'; const pct=Math.round(score/quizData.length*100); document.getElementById('resultIcon').textContent=['😔','🙁','🙂','😊','🎉','🏆'][Math.floor(pct/20)]; document.getElementById('resultScore').textContent=`${score}/${quizData.length}`; document.getElementById('resultTitle').textContent=['Cần cố gắng thêm!','Bắt đầu tốt!','Khá tốt!','Giỏi lắm!','Xuất sắc!','Hoàn hảo! 🌊'][Math.floor(pct/20)]; document.getElementById('resultMsg').textContent=pct===100?'Tuyệt vời! Bạn am hiểu sâu sắc về vị trí chiến lược và chủ quyền biển đảo Quảng Ninh!':pct>=70?'Rất tốt! Hãy tiếp tục tìm hiểu thêm về vùng Đông Bắc!':pct>=40?'Hãy khám phá thêm về vùng biển đảo Quảng Ninh hùng vĩ!':'Đừng nản! Hãy cùng tìm hiểu về chủ quyền biển đảo vùng Đông Bắc — niềm tự hào quê hương!'; }
 function restartQuiz(){ qIdx=0; score=0; answered=false; document.getElementById('quiz-main').style.display='block'; document.getElementById('quiz-result').style.display='none'; document.getElementById('quizScore').textContent='Điểm: 0'; loadQuiz(); }
 loadQuiz();
 
@@ -988,7 +964,7 @@ function createWallCard(data) {
   const d = document.createElement('div');
   d.className = 'wall-card';
   d.innerHTML = `
-    <div class="wc-name">⛵ ${escHtml(data.name)}</div>
+    <div class="wc-name">⚓ ${escHtml(data.name)}</div>
     <div class="wc-text">"${escHtml(data.text)}"</div>
     <div class="wc-time">${formatTime(data.createdAt)}</div>
   `;
@@ -1011,7 +987,6 @@ function renderWallFromSnapshot(snapshot) {
   });
 }
 
-// Lắng nghe realtime từ Firestore
 function initWallListener() {
   if (!firebaseReady || !db) {
     setFbStatus('error', 'Chưa cấu hình Firebase');
@@ -1076,8 +1051,6 @@ async function addPledge() {
   }
 }
 
-// initWallListener() sẽ được gọi tự động sau khi Firebase load xong
-
 /* ============================================================
    COUNTER ANIMATION
    ============================================================ */
@@ -1098,6 +1071,5 @@ const sections=document.querySelectorAll('section[id]');
 const navLinks=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{ let cur=''; sections.forEach(s=>{ if(window.scrollY>=s.offsetTop-110) cur=s.id; }); navLinks.forEach(a=>{ a.style.color=a.getAttribute('href')==='#'+cur?'#fff':''; }); });
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fec1de00b6e84cc',t:'MTc3OTI4ODIzOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-<!-- v-fix-timeline -->
+</body>
 </html>
